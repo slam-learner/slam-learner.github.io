@@ -8,7 +8,9 @@ subtitle: 一个普普通通的帅比罢了
 description: 江苏大学 | 车辆工程 | SLAM
 keywords: "VSLAM IMU LIDAR GNSS INSS"
 author: 杨东晓
-language: zh-CN
+language: 
+  - zh-CN
+  - en
 timezone: Asia/Shanghai
 
 # URL
@@ -98,7 +100,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: stellar
 # remote_theme: next-theme/hexo-theme-next
 
 # Deployment
@@ -107,3 +109,8 @@ deploy:
   type: git
   repo: git@github.com:slam-learner/slam-learner.github.io.git
   branch: gh-pages
+
+inject:
+  head:
+    - <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  script:
