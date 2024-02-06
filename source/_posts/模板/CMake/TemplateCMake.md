@@ -17,7 +17,7 @@ else( CMAKE_BUILD_TYPE MATCHES RELEASE )
    message("Release mode")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -msse3 -std=c++11 -pthread -O2 -march=native -Wno-deprecated-declarations -Wno-deprecated")
    set(TYPE release)
-endif( CMAKE_BUILD_TYPE MATCHES DEBUG )
+endif( CMAKE_BUILD_TYPE MATCHES DEBUG ) 
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
