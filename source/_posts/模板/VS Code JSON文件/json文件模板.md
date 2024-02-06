@@ -7,7 +7,7 @@ categories:
 - 模板
 ---
 
-# VS Code JSON 文件模板
+## VS Code JSON 文件模板
 
 `launch.json` 示例：
 

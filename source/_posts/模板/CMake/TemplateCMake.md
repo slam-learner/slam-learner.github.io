@@ -7,7 +7,7 @@ categories:
 - 模板
 ---
 
-# CMakeLists模板
+## CMakeLists模板
 
 ```cmake
 cmake_minimum_required(VERSION 3.10)
