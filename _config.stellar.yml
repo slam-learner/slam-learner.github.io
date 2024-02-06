@@ -12,6 +12,11 @@ style:
     button: 'hsl(192 98% 55%)' # 按钮颜色
     hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
 
+  leftbar:
+    background-image: url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.13/image/sidebar-bg1@small.jpg)
+    blur-px: 100px # 模糊半径
+    blur-bg: var(--alpha60) # 模糊颜色
+
   font-family:
     body: '"Noto Serif SC", "Microsoft Yahei",..., sans-serif'
 
@@ -26,4 +31,84 @@ open_graph:
   twitter_id: # for open_graph meta
 
 article:
-  auto_cover: true
+  auto_cover: false
+  type: tech # tech/story
+
+# 侧边栏主功能导航菜单
+# menubar:
+  # columns: 4 # 一行多少个
+  # items: # 可按照自己需求增加，符合以下格式即可
+    # - id: post # 页面中高亮的 menu_id
+    #   theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
+    #   icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
+    #   title: 博客 # 标题
+    #   url: / # 跳转链接，支持相对路径和绝对路径
+    # - id: wiki
+    #   theme: '#3DC550'
+    #   icon: solar:notebook-bookmark-bold-duotone
+    #   title: 文档
+    #   url: /wiki/
+    # - id: explore
+    #   theme: '#FA6400'
+    #   icon: solar:planet-bold-duotone
+    #   title: 探索
+    #   url: /explore/
+    # - id: social
+    #   theme: '#F44336'
+    #   icon: solar:chat-square-like-bold-duotone
+    #   title: 社交
+    #   url: /friends/
+
+widgets:
+  #### 自动生成的页面 ####
+  # 主页
+  home: search, welcome, recent, tagcloud, timeline, statement # for home
+
+content: | # 支持 Markdown 格式
+  <center>
+  </br>
+  </br>
+  <!--不蒜子计数器-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!--添加一个访问量-->
+  <span>
+    👨‍💻本站由 <a href="/" style="color: rgb(13, 109, 252); font-weight: bold;">@鱼龙</a> 使用 <a href="https://github.com/xaoxuu/hexo-theme-stellar" style="color: rgb(13, 109, 252); font-weight: bold;">Stellar</a> 主题创建
+  </span>
+  </br>
+  </br>
+  <span>
+      📃本"<span style="color: rgb(13, 109, 252); font-weight: bold;">页面</span>"访问 <span id="busuanzi_value_page_pv" style="color: rgb(13, 109, 252); font-weight: bold;"></span> 次 | 👀总访问 <span id="busuanzi_value_site_pv" style="color: rgb(13, 109, 252); font-weight: bold;"></span>次 | 🥷总访客 <span id="busuanzi_value_site_uv" style="color: rgb(13, 109, 252); font-weight: bold;"></span> 人
+  </span>
+  </br>
+  </br>
+  <script type="text/javascript">
+    function show_runtime() {
+        window.setTimeout("show_runtime()", 1000);
+        X = new Date("6/28/2023 21:34:18");
+        Y = new Date();
+        T = (Y.getTime() - X.getTime());
+        M = 24 * 60 * 60 * 1000;
+        a = T / M;
+        A = Math.floor(a);
+        b = (a - A) * 24;
+        B = Math.floor(b);
+        c = (b - B) * 60;
+        C = Math.floor((b - B) * 60);
+        D = Math.floor((c - C) * 60);
+        runtime_day.innerHTML = A;
+        runtime_hour.innerHTML = B;
+        runtime_minute.innerHTML = C;
+        runtime_second.innerHTML = D
+    }
+    show_runtime();
+  </script>
+  <span>⏱️本站已运行</span>
+  <span id="runtime_day" style="color: rgb(13, 109, 252); font-weight: bold;"></span>
+  <span >天</span>
+  <span id="runtime_hour" style="color: rgb(13, 109, 252); font-weight: bold;"></span>
+  <span>小时</span>
+  <span id="runtime_minute" style="color: rgb(13, 109, 252); font-weight: bold;"></span>
+  <span>分</span>
+  <span id="runtime_second" style="color: rgb(13, 109, 252); font-weight: bold;"></span>
+  <span>秒</span>
+  </center>
