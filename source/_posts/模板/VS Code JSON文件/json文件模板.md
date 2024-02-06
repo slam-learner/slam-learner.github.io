@@ -1,3 +1,12 @@
+---
+title: VS Code JSON 文件模板
+date: 2024-02-06 17:09:04
+tags: 
+- VS Code
+categories:
+- 模板
+---
+
 # VS Code JSON 文件模板
 
 `launch.json` 示例：

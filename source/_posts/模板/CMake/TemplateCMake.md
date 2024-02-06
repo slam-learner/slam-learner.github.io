@@ -1,3 +1,12 @@
+---
+title: CMakeLists模板
+date: 2024-02-06 17:09:04
+tags: 
+- CMake
+categories:
+- 模板
+---
+
 # CMakeLists模板
 
 ```cmake
