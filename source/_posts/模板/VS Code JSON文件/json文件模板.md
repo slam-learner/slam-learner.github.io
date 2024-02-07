@@ -165,8 +165,7 @@ categories:
       "**/node_modules": true,
       "**/bower_components": true,
       "**/*.code-search": true
-    },
-
+    }
 }
 ```
 
