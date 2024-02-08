@@ -9,6 +9,8 @@ categories:
 
 ## VS Code JSON 文件模板
 
+<!-- more -->
+
 `launch.json` 示例：
 
 ```json

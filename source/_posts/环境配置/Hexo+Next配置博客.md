@@ -11,11 +11,11 @@ categories:
 
 经过一段时间搭建成功了个人博客，可以进入[我的个人博客](https://slam-learner.github.io/) 查看效果。这里对于搭建以及在默认设置的基础上做出的修改进行一下纪录。由于有一些设置是在很久以前完成的，步骤以及一些说明可能存在遗漏或者不完全正确，希望能够谅解并指正。
 
-博客搭建依赖于 Hexo 博客框架+Next 主题。Hexo 是目前很流行的静态博客生成框架，它基于 Node.js 框架。使用此框架之后，可以直接使用 Markdown 来撰写博客，Hexo 在选取主题做好相应的设置之后会自动生成相应的网页，下面是具体的步骤。
-
 <!-- more -->
 
-## 安装 Node.js
+博客搭建依赖于 Hexo 博客框架+Next 主题。Hexo 是目前很流行的静态博客生成框架，它基于 Node. Js 框架。使用此框架之后，可以直接使用 Markdown 来撰写博客，Hexo 在选取主题做好相应的设置之后会自动生成相应的网页，下面是具体的步骤。
+
+## 安装 Node. Js
 
 首先进入 `Node.js` 的 [官网](https://nodejs.org/en/download/current) ，根据自己的系统选择对应的版本进行安装，在我进行安装时的最新版本为 `v20.5.1`，在 `windows` 系统下按照提示并且安装选项全部默认即可，安装完成之后，可以打开 `Powershell` 或者 `cmd` 输入 `node -v` 和 `npm -v`，当出现版本号时即说明安装成功。
 
@@ -91,7 +91,7 @@ FATAL {
 hexo s -p 5000
 ```
 
-hexo 的官方文档放在了参考资料部分供查阅。
+Hexo 的官方文档放在了参考资料部分供查阅。
 
 ## 连接 GitHub 与本地
 
@@ -131,11 +131,11 @@ deploy:
 
 ## 将博客部署至云端
 
-首先在博客根目录下右键打开`Git Bash`，安装一个扩展 `npm i hexo-deployer-git`。
+首先在博客根目录下右键打开 `Git Bash`，安装一个扩展 `npm i hexo-deployer-git`。
 
-然后输入`hexo new post "article title"`，新建一篇文章。
+然后输入 `hexo new post "article title"`，新建一篇文章。
 
-在 `source\_posts` 目录下就会增加一个 `.md` 文件，编写完此文件后，根目录下输入 `hexo g` 生成静态网页，然后输入 `hexo s` 可以本地预览效果，最后输入 `hexo d` 上传到 GitHub 上，此时 github.io 主页即可看到发布的文章（`hexo c` 可以清除之前的生成文件）。注意 `.gitignore` 文件中需要将一些文件进行忽略，我的 `.gitignore` 文件如下：
+在 `source\_posts` 目录下就会增加一个 `.md` 文件，编写完此文件后，根目录下输入 `hexo g` 生成静态网页，然后输入 `hexo s` 可以本地预览效果，最后输入 `hexo d` 上传到 GitHub 上，此时 github. Io 主页即可看到发布的文章（`hexo c` 可以清除之前的生成文件）。注意 `.gitignore` 文件中需要将一些文件进行忽略，我的 `.gitignore` 文件如下：
 
 ```text
 .DS_Store
@@ -199,6 +199,10 @@ jobs:
 如果没有 `gh-pages` 分支，则新建一个 `gh-pages` 分支。
 
 此时就完成了部署相关的配置。
+
+## 让博客被搜索引擎检索
+
+参考 [hexo框架下的博客提交至google搜索](https://lantary.cn/Blog_optimization/add_blog_search.html)。
 
 ## Next 主题相关设置
 
@@ -380,7 +384,7 @@ git clone https://github.com/theme-next/hexo-theme-next themes/next
 
 安装完成后在项目根目录下的 `_config.yml` 中将 `themes` 的值设置为 `next` 即可。
 
-这里我的 `Next` 版本为 `8.18.0`（你可以在 themes/next/package. json 中看到）。如果版本不同可能会有一些选项存在差异，请参考官方文档及其他网络资料进行设置。
+这里我的 `Next` 版本为 `8.18.0`（你可以在 themes/next/package. Json 中看到）。如果版本不同可能会有一些选项存在差异，请参考官方文档及其他网络资料进行设置。
 
 ### 标签页与分类页
 
@@ -413,7 +417,7 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
+  #sitemap : /sitemap. Xml || sitemap
   #commonweal: /404/ || heartbeat
 ```
 
@@ -486,7 +490,7 @@ local_search:
 
 #### 头像
 
-将头像文件放置到 themes/next/source/images/avatar.png 路径，然后在 `主题_config.yml` 文件中编辑 avatar 的配置，修改为正确的路径即可。
+将头像文件放置到 themes/next/source/images/avatar. Png 路径，然后在 `主题_config.yml` 文件中编辑 avatar 的配置，修改为正确的路径即可。
 
 ```yml
 # Sidebar Avatar
@@ -545,7 +549,7 @@ back2top:
 
 `enable` 默认为 `true`，即默认显示。`sidebar` 如果设置为 `true`，按钮会出现在侧栏下方，`scrollpercent` 显示阅读百分比。
 
-#### reading_process
+#### Reading_process
 
 `reading_process` 打开后网页的最上侧会出现一个细细的进度条，代表页面加载进度和阅读进度。
 
@@ -585,7 +589,7 @@ powered: false
 
 默认标签前用 `#`，可以将 `tag_icon` 设为 `true` 改为使用图标。
 
-#### ribbon 动态背景
+#### Ribbon 动态背景
 
 将 `canvas_ribbon` 的 `enable` 设置为 `true`。
 
@@ -596,6 +600,11 @@ powered: false
 #### 阅读全文
 
 这里参考了一些文章的设置但是似乎没有生效，不过可以在文章想要省略的部分前加入 `<!-- more -->` 来实现首页中文章的折叠，点击 `阅读全文` 才显示全部。
+
+#### 字体大小调整
+
+根据 [https://www.techgrow.cn/posts/fef9e726.html](https://www.techgrow.cn/posts/fef9e726.html) 在评论区中提到的字体调整方法，
+这里根据本人喜好将字体调小了一些，修改 `themes/next/source/css/_variables/base.styl` 文件中的 `$font-size-base` 的值为 `.875em`。
 
 #### 启用图片点击居中预览
 
@@ -645,7 +654,7 @@ symbols_count_time:
 
 由于 Hexo 的博客是静态博客，而且也没有连接数据库的功能，所以它的评论功能是不能自行集成的，但可以集成第三方的服务。 Next 主题里面提供了多种评论插件的集成，有 changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte 这些。这里选择 gitalk，也就是 GitHub 提供的服务。可以参考 [B 站视频](https://www.bilibili.com/video/BV16W411t7mq?p=22) 进行注册操作获取到 Client ID、Client Secret，`yml` 文件由于版本的问题存在差异，根据注释中的说明填入对应的值即可。
 
-首先需要在 `_config.yml` 文件的`comments` 区域配置使用 `gitalk`：
+首先需要在 `_config.yml` 文件的 `comments` 区域配置使用 `gitalk`：
 
 ```yml
 # Multiple Comment System Support
@@ -657,7 +666,7 @@ comments:
   active: gitalk
 ```
 
-主要是 comments.active 字段选择对应的名称即可。然后找到 gitalk 配置，添加它的各项配置：
+主要是 comments. Active 字段选择对应的名称即可。然后找到 gitalk 配置，添加它的各项配置：
 
 ```yml
 # Gitalk
@@ -719,13 +728,13 @@ darkmode: false
 
 #### 一些功能选项
 
-- pangu——中英文之间自动添加空格
+- Pangu——中英文之间自动添加空格
 
 ```yml
 pangu: true
 ```
 
-- math
+- Math
  Next 主题对于公式提供了两个渲染引擎，分别是 mathjax 和 katex，后者相对前者来说渲染速度更快，而且不需要 JavaScript 的额外支持，但后者支持的功能现在还不如前者丰富，具体的对比可以看官方文档：[https://theme-next.org/docs/third-party-services/math-equations](https://theme-next.org/docs/third-party-services/math-equations)。
 
 ```yml
@@ -746,7 +755,7 @@ math:
 
 上面的设置会让每篇博客默认开启 math，也可以将上面的选项关掉，在想要使用公式的博客的 fronter（文件头）中开启。
 
-mathjax 的使用需要我们额外安装一个插件，叫做 hexo-renderer-kramed，另外也可以安装 hexo-renderer-pandoc，命令如下：
+Mathjax 的使用需要我们额外安装一个插件，叫做 hexo-renderer-kramed，另外也可以安装 hexo-renderer-pandoc，命令如下：
 
 ```yml
 npm un hexo-renderer-marked --save

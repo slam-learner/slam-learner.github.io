@@ -9,6 +9,8 @@ categories:
 
 ## CMakeLists模板
 
+<!-- more -->
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(PROJECT_NAME)
