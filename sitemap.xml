@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://slam-learner.github.io/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/</loc>
+    
+    <lastmod>2024-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/2024/02/06/%E6%A8%A1%E6%9D%BF/CMake/TemplateCMake/</loc>
+    
+    <lastmod>2024-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/2024/02/06/%E6%A8%A1%E6%9D%BF/VS%20Code%20JSON%E6%96%87%E4%BB%B6/json%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/</loc>
+    
+    <lastmod>2024-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/404.html</loc>
+    
+    <lastmod>2024-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/categories/index.html</loc>
+    
+    <lastmod>2024-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/tags/index.html</loc>
+    
+    <lastmod>2024-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://slam-learner.github.io/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://slam-learner.github.io/tags/Hexo/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/tags/Next/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/tags/CMake/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/tags/VS-Code/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://slam-learner.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slam-learner.github.io/categories/%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2024-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+</urlset>
