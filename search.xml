@@ -40,8 +40,8 @@
     <url>/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>经过一段时间搭建成功了个人博客，可以进入<a href="https://slam-learner.github.io/">我的个人博客</a> 查看效果。这里对于搭建以及在默认设置的基础上做出的修改进行一下纪录。由于有一些设置是在很久以前完成的，步骤以及一些说明可能存在遗漏或者不完全正确，希望能够谅解并指正。</p>
 <span id="more"></span>
-<p>博客搭建依赖于 Hexo 博客框架+Next 主题。Hexo 是目前很流行的静态博客生成框架，它基于 Node. Js 框架。使用此框架之后，可以直接使用 Markdown 来撰写博客，Hexo 在选取主题做好相应的设置之后会自动生成相应的网页，下面是具体的步骤。</p>
-<h2 id="安装-Node-Js"><a href="#安装-Node-Js" class="headerlink" title="安装 Node. Js"></a>安装 Node. Js</h2><p>首先进入 <code>Node.js</code> 的 <a href="https://nodejs.org/en/download/current">官网</a> ，根据自己的系统选择对应的版本进行安装，在我进行安装时的最新版本为 <code>v20.5.1</code>，在 <code>windows</code> 系统下按照提示并且安装选项全部默认即可，安装完成之后，可以打开 <code>Powershell</code> 或者 <code>cmd</code> 输入 <code>node -v</code> 和 <code>npm -v</code>，当出现版本号时即说明安装成功。</p>
+<p>博客搭建依赖于 Hexo 博客框架+Next 主题。Hexo 是目前很流行的静态博客生成框架，它基于 Node.js 框架。使用此框架之后，可以直接使用 Markdown 来撰写博客，Hexo 在选取主题做好相应的设置之后会自动生成相应的网页，下面是具体的步骤。</p>
+<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>首先进入 <code>Node.js</code> 的 <a href="https://nodejs.org/en/download/current">官网</a> ，根据自己的系统选择对应的版本进行安装，在我进行安装时的最新版本为 <code>v20.5.1</code>，在 <code>windows</code> 系统下按照提示并且安装选项全部默认即可，安装完成之后，可以打开 <code>Powershell</code> 或者 <code>cmd</code> 输入 <code>node -v</code> 和 <code>npm -v</code>，当出现版本号时即说明安装成功。</p>
 <h2 id="设置镜像源"><a href="#设置镜像源" class="headerlink" title="设置镜像源"></a>设置镜像源</h2><p><code>node</code> 的包管理器为 <code>npm</code>，我的版本为 <code>9.8.0</code>，由于国内网络问题，需要设置一下镜像源进行加速，这里参考博客 <a href="https://cloud.tencent.com/developer/article/1372949">npm 使用国内镜像加速的几种方法</a><br> <strong>方法 1</strong><br> 设置全局镜像源（淘宝镜像）。</p>
  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
 <p>设置完成之后，可以通过以下命令进行验证：</p>
@@ -190,7 +190,7 @@
 <li><a href="https://hexo.io/zh-cn/docs/">Hexo 官方中文文档</a></li>
 <li><a href="https://theme-next.js.org/">Next 官方文档</a></li>
 <li><a href="https://theme-next.iissnan.com/getting-started.html">Next-开始使用</a></li>
-<li>[Next-]</li>
+<li><a href="https://theme-next.iissnan.com/theme-settings.html">Next-主题配置</a></li>
 <li><a href="https://cuiqingcai.com/7625.html">利用 GitHub + Hexo + Next 从零搭建一个博客</a></li>
 <li><a href="https://www.techgrow.cn/posts/abf4aee1.html">Hexo Next 8.x 主题添加可切换的暗黑模式</a></li>
 <li><a href="https://www.techgrow.cn/posts/755ff30d.html">Hexo Next 主题详细配置之一</a></li>
