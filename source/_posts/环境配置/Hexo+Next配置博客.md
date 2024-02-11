@@ -13,9 +13,9 @@ categories:
 
 <!-- more -->
 
-博客搭建依赖于 Hexo 博客框架+Next 主题。Hexo 是目前很流行的静态博客生成框架，它基于 Node. Js 框架。使用此框架之后，可以直接使用 Markdown 来撰写博客，Hexo 在选取主题做好相应的设置之后会自动生成相应的网页，下面是具体的步骤。
+博客搭建依赖于 Hexo 博客框架+Next 主题。Hexo 是目前很流行的静态博客生成框架，它基于 Node.js 框架。使用此框架之后，可以直接使用 Markdown 来撰写博客，Hexo 在选取主题做好相应的设置之后会自动生成相应的网页，下面是具体的步骤。
 
-## 安装 Node. Js
+## 安装 Node.js
 
 首先进入 `Node.js` 的 [官网](https://nodejs.org/en/download/current) ，根据自己的系统选择对应的版本进行安装，在我进行安装时的最新版本为 `v20.5.1`，在 `windows` 系统下按照提示并且安装选项全部默认即可，安装完成之后，可以打开 `Powershell` 或者 `cmd` 输入 `node -v` 和 `npm -v`，当出现版本号时即说明安装成功。
 
@@ -768,7 +768,7 @@ npm i hexo-renderer-kramed --save
 2. [Hexo 官方中文文档](https://hexo.io/zh-cn/docs/)
 3. [Next 官方文档](https://theme-next.js.org/)
 4. [Next-开始使用](https://theme-next.iissnan.com/getting-started.html)
-5. [Next-]
+5. [Next-主题配置](https://theme-next.iissnan.com/theme-settings.html)
 6. [利用 GitHub + Hexo + Next 从零搭建一个博客](https://cuiqingcai.com/7625.html)
 7. [Hexo Next 8.x 主题添加可切换的暗黑模式](https://www.techgrow.cn/posts/abf4aee1.html)
 8. [Hexo Next 主题详细配置之一](https://www.techgrow.cn/posts/755ff30d.html)
