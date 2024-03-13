@@ -11,6 +11,8 @@ categories:
 
 <!-- more -->
 
+常用的项目文件`CMakeLists.txt`模板如下：
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(PROJECT_NAME)
@@ -72,3 +74,29 @@ target_link_libraries(${PROJECT_NAME}_lib
 add_executable(BIN_NAME SOURCE_FILE.cc)
 target_link_libraries(BIN_NAME ${PROJECT_NAME}_lib)
 ```
+
+禁用内部构建`PreventInSourceBuild.cmake`：
+
+```cmake
+function(prevent_in_source_build)
+    get_filename_component(src_dir "${CMAKE_SOURCE_DIR}" REALPATH)
+    get_filename_component(bin_dir "${CMAKE_BINARY_DIR}" REALPATH)
+
+    if ("${src_dir}" STREQUAL "${bin_dir}")
+        message(FATAL_ERROR "In-source builds are not allowed.")
+    endif()
+endfunction(prevent_in_source_build)
+
+message(STATUS "prevent_in_source_build.cmake loaded.")
+prevent_in_source_build()
+```
+
+将项目内部安装库添加到路径中`SetupDependencies.cmake`：
+
+```cmake
+message(STATUS "Setting up dependencies...")
+
+list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../cmake/modules")
+list(PREPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_LIST_DIR}/../install")
+```
+
