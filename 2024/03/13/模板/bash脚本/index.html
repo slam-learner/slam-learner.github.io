@@ -21,26 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"slam-learner.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":200},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="江苏大学 | 车辆工程 | SLAM">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ydxの博客">
-<meta property="og:url" content="https://slam-learner.github.io/index.html">
+    <meta name="description" content="在项目本地编译安装第三方库而不是安装到系统目录 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bash脚本">
+<meta property="og:url" content="https://slam-learner.github.io/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="ydxの博客">
-<meta property="og:description" content="江苏大学 | 车辆工程 | SLAM">
+<meta property="og:description" content="在项目本地编译安装第三方库而不是安装到系统目录 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-13T05:52:04.000Z">
+<meta property="article:modified_time" content="2024-03-13T05:57:36.722Z">
 <meta property="article:author" content="ydx">
-<meta property="article:tag" content="VSLAM IMU LIDAR GNSS INSS">
+<meta property="article:tag" content="bash">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://slam-learner.github.io/">
+<link rel="canonical" href="https://slam-learner.github.io/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/","path":"2024/03/13/模板/bash脚本/","title":"bash脚本"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>ydxの博客</title>
+<title>bash脚本 | ydxの博客</title>
   
 
 
@@ -73,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">ydxの博客</h1>
+      <p class="site-title">ydxの博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">一个普普通通的帅比罢了</p>
@@ -189,16 +191,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -212,13 +215,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
+      <meta itemprop="name" content="bash脚本 | ydxの博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">bash脚本</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          bash脚本
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -242,6 +245,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -264,15 +274,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>在项目本地编译安装第三方库而不是安装到系统目录</p>
+    <div class="post-body" itemprop="articleBody"><p>在项目本地编译安装第三方库而不是安装到系统目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## author: ydx</span></span><br><span class="line"><span class="comment">## description: 在项目本地编译安装第三方库而不是安装到系统目录</span></span><br><span class="line"><span class="comment">## date: 2023-12-25</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 记录脚本、项目目录</span></span><br><span class="line">SCRIPT_DIR=<span class="string">&quot;<span class="subst">$( cd <span class="string">&quot;<span class="subst">$( dirname <span class="string">&quot;<span class="variable">$&#123;BASH_SOURCE[0]&#125;</span>&quot;</span> )</span>&quot;</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; pwd )</span>&quot;</span></span><br><span class="line">PROJECT_DIR=<span class="string">&quot;<span class="variable">$SCRIPT_DIR</span>/..&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果没有指定编译类型，则默认为Release</span></span><br><span class="line">BUILD_TYPE=<span class="string">&quot;<span class="variable">$&#123;1:-Release&#125;</span>&quot;</span></span><br><span class="line">CLEAN_BUILD=<span class="string">&quot;<span class="variable">$&#123;2:-false&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Build type of third party: <span class="variable">$BUILD_TYPE</span>&quot;</span></span><br><span class="line"></span><br><span class="line">SPLIT_LINE=<span class="string">&quot;####################################################################&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set -x # 打开调试模式，每行命令执行前都会打印该命令</span></span><br><span class="line"><span class="built_in">set</span> -e <span class="comment"># 出错则退出</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查gcc和g++是否安装, 如果没有安装则安装gcc和g++</span></span><br><span class="line"><span class="built_in">which</span> gcc &gt; /dev/null 2&gt;&amp;1 || &#123; <span class="built_in">echo</span> <span class="string">&quot;gcc not found! Trying to install gcc!&quot;</span>; sudo apt-get install gcc; &#125;</span><br><span class="line"><span class="built_in">which</span> g++ &gt; /dev/null 2&gt;&amp;1 || &#123; <span class="built_in">echo</span> <span class="string">&quot;g++ not found! Trying to install g++!&quot;</span>; sudo apt-get install g++; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于C++17的良好支持，需要g++9以上版本，这里进行检查</span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">&quot;<span class="variable">$CXX</span>&quot;</span>]; <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">for</span> VER <span class="keyword">in</span> 9 10 11 12 13; <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hash</span> g++-<span class="variable">$VER</span> 2&gt; /dev/null; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">export</span> CXX=g++-<span class="variable">$VER</span></span><br><span class="line">            <span class="built_in">export</span> CC=gcc-<span class="variable">$VER</span></span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果没有找到g++9以上版本，则尝试更新gcc和g++到gcc-9 g++-9</span></span><br><span class="line"><span class="comment"># if [ -z STRING ] 测试STRING是否为空，如果为空返回 true</span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">&quot;<span class="variable">$CXX</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;No g++ version 9 or higher found! Trying to update gcc and g++ to gcc-9 g++-9 for C++17 support!&quot;</span></span><br><span class="line">    sudo sh <span class="variable">$SCRIPT_DIR</span>/update-gcc-g++.sh</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">hash</span> g++-9 2&gt; dev/null; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">export</span> CXX=g++-9</span><br><span class="line">        <span class="built_in">export</span> CC=gcc-9</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查gcc和g++编译器是否存在</span></span><br><span class="line"><span class="comment"># if [ -n STRING ] 测试STRING是否为空，如果非空返回 true</span></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">&quot;<span class="variable">$CXX</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">which</span> <span class="string">&quot;<span class="variable">$CXX</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;No g++ version 9 or higher found! Please install g++-9 or higher!&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">&quot;<span class="variable">$CC</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">which</span> <span class="string">&quot;<span class="variable">$CC</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;No gcc version 9 or higher found! Please install gcc-9 or higher!&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用同样的标准对各个库进行编译</span></span><br><span class="line">YHS_CXX_STANDARD=14</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;C++ standard: <span class="variable">$YHS_CXX_STANDARD</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取逻辑CPU核心数，用于并行编译，如果获取失败则默认为1</span></span><br><span class="line">NUM_CORES=`(<span class="built_in">which</span> <span class="built_in">nproc</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; <span class="built_in">nproc</span>) || sysctl -n hw.logicalcpu || <span class="built_in">echo</span> 1`</span><br><span class="line">NUM_PARALLEL_BUILDS=<span class="variable">$NUM_CORES</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Number of build thread: <span class="variable">$NUM_CORES</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Eigen默认使用16字节的对齐，但当AVX指令集可用时，Eigen会使用32字节的对齐</span></span><br><span class="line"><span class="comment"># 如果各个库或者项目使用了不同的对齐方式，可能会导致内存访问错误</span></span><br><span class="line"><span class="comment"># 而 Ceres 库以及 OpenGV 库在release模式会强制性传递 arch=native 选项</span></span><br><span class="line"><span class="comment"># 在现代的CPU上，arch=native 选项会启用 SSE4.2 和 AVX 指令集也就是会使用32字节的对齐</span></span><br><span class="line"><span class="comment"># 为了防止Eigen库引入一些微妙的bug，需要在各处编译时都加入arc=native选项</span></span><br><span class="line"><span class="comment"># 参见：https://eigen.tuxfamily.org/dox/TopicPreprocessorDirectives.html</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(uname -m)</span>&quot;</span> = <span class="string">&quot;x86_64&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    CMAKE_MARCH=<span class="string">&quot;&#123;CXX_MARCH:-native&#125;&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">&quot;<span class="variable">$CXX_MARCH</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    EXTRA_CXX_FLAGS=<span class="string">&quot;<span class="variable">$EXTRA_CXX_FLAGS</span> -march=<span class="variable">$CXX_MARCH</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">EXTRA_CXX_FLAGS=<span class="string">&quot;<span class="variable">$&#123;EXTRA_CXX_FLAGS&#125;</span> <span class="variable">$&#123;CXX_FLAGS&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">INSTALL_DIR=<span class="string">&quot;<span class="variable">$PROJECT_DIR</span>/install&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通用的CMake参数</span></span><br><span class="line"><span class="comment"># -DCMAKE_BUILD_TYPE=$&#123;BUILD_TYPE&#125; 指定编译类型</span></span><br><span class="line"><span class="comment"># -DCMAKE_CXX_STANDARD=$&#123;YHS_CXX_STANDARD&#125; 指定C++标准</span></span><br><span class="line"><span class="comment"># -DCMAKE_CXX_FLAGS=&quot;$&#123;EXTRA_CXX_FLAGS&#125;&quot; 指定额外的C++编译选项</span></span><br><span class="line"><span class="comment"># -DCMAKE_INSTALL_PREFIX=$&#123;INSTALL_DIR&#125; 指定安装目录</span></span><br><span class="line"><span class="comment"># -DCMAKE_PREFIX_PATH=$&#123;INSTALL_DIR&#125; 指定查找依赖库的路径, find_package()会在这个路径下查找依赖库</span></span><br><span class="line"><span class="comment"># -DCMAKE_CXX_EXTENSIONS=OFF 禁用C++扩展</span></span><br><span class="line"><span class="comment"># -DCMAKE_POSITION_INDEPENDENT_CODE=ON 生成位置无关的代码</span></span><br><span class="line"><span class="comment"># -DBUILD_SHARED_LIBS=OFF 禁用动态库</span></span><br><span class="line">COMMON_CMAKE_ARGS=(</span><br><span class="line">    -DCMAKE_BUILD_TYPE=<span class="variable">$&#123;BUILD_TYPE&#125;</span></span><br><span class="line">    -DCMAKE_CXX_STANDARD=<span class="variable">$&#123;YHS_CXX_STANDARD&#125;</span></span><br><span class="line">    -DCMAKE_CXX_FLAGS=<span class="string">&quot;<span class="variable">$&#123;EXTRA_CXX_FLAGS&#125;</span>&quot;</span></span><br><span class="line">    -DCMAKE_INSTALL_PREFIX=<span class="variable">$&#123;INSTALL_DIR&#125;</span></span><br><span class="line">    -DCMAKE_PREFIX_PATH=<span class="variable">$&#123;INSTALL_DIR&#125;</span></span><br><span class="line">    -DCMAKE_CXX_EXTENSIONS=OFF</span><br><span class="line">    -DCMAKE_POSITION_INDEPENDENT_CODE=ON</span><br><span class="line">    -DBUILD_SHARED_LIBS=OFF</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查ccache是否可用，如果可用则使用ccache加速编译</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">command</span> -v ccache &gt; /dev/null 2&gt;&amp;1; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;ccache found! Using ccache to speed up compilation!&quot;</span></span><br><span class="line">    COMMON_CMAKE_ARGS+=(</span><br><span class="line">            -DCMAKE_C_COMPILER_LAUNCHER=ccache</span><br><span class="line">            -DCMAKE_CXX_COMPILER_LAUNCHER=ccache</span><br><span class="line">            <span class="string">&quot;<span class="variable">$&#123;COMMON_CMAKE_ARGS[@]&#125;</span>&quot;</span></span><br><span class="line">        )</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;ccache not found! Compiling without ccache!&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">rm</span> -rf <span class="string">&quot;<span class="variable">$INSTALL_DIR</span>&quot;</span></span><br><span class="line"><span class="built_in">mkdir</span> -p <span class="string">&quot;<span class="variable">$INSTALL_DIR</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 由于有的库之间存在依赖关系，并且有的库需要额外添加一些编译选项，所以需要按照顺序手工编译</span></span><br><span class="line">THIRD_DIR=<span class="string">&quot;<span class="variable">$PROJECT_DIR</span>/third_party&quot;</span></span><br><span class="line"><span class="comment">##################################</span></span><br><span class="line"><span class="comment">## Eigen</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Building Eigen...&quot;</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$THIRD_DIR</span>/eigen-3.4.0&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CLEAN_BUILD</span>&quot;</span> = <span class="literal">true</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">rm</span> -rf build</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">mkdir</span> -p build</span><br><span class="line">    <span class="built_in">cd</span> build</span><br><span class="line">    cmake .. <span class="string">&quot;<span class="variable">$&#123;COMMON_CMAKE_ARGS[@]&#125;</span>&quot;</span> \</span><br><span class="line">        -DBUILD_TESTING=OFF</span><br><span class="line">    make -j<span class="variable">$NUM_PARALLEL_BUILDS</span></span><br><span class="line">    make install</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##################################</span></span><br><span class="line"><span class="comment">## yaml-cpp</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Building yaml-cpp...&quot;</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$THIRD_DIR</span>/yaml-cpp&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CLEAN_BUILD</span>&quot;</span> = <span class="literal">true</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">rm</span> -rf build</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">mkdir</span> -p build</span><br><span class="line">    <span class="built_in">cd</span> build</span><br><span class="line">    cmake .. <span class="string">&quot;<span class="variable">$&#123;COMMON_CMAKE_ARGS[@]&#125;</span>&quot;</span></span><br><span class="line">    make -j<span class="variable">$NUM_PARALLEL_BUILDS</span></span><br><span class="line">    make install</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##################################</span></span><br><span class="line"><span class="comment">## OpenCV 4.5.4</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Building OpenCV...&quot;</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$THIRD_DIR</span>/opencv-4.5.4&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CLEAN_BUILD</span>&quot;</span> = <span class="literal">true</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">rm</span> -rf build</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">mkdir</span> -p build</span><br><span class="line">    <span class="built_in">cd</span> build</span><br><span class="line">    cmake .. <span class="string">&quot;<span class="variable">$&#123;COMMON_CMAKE_ARGS[@]&#125;</span>&quot;</span> \</span><br><span class="line">        -DCMAKE_VERBOSE_MAKEFILE=ON \</span><br><span class="line">        -DOPENCV_ENABLE_NONFREE=ON \</span><br><span class="line">        -DOPENCV_GENERATE_PKGCONFIG=ON \</span><br><span class="line">        -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_OPENMP=ON -DWITH_PTHREADS_PF=ON \</span><br><span class="line">        -DWITH_1394=OFF \</span><br><span class="line">        -DBUILD_TESTS=OFF \</span><br><span class="line">        -DBUILD_PERF_TESTS=OFF \</span><br><span class="line">        -DENABLE_CXX11=ON \</span><br><span class="line">        -DBUILD_DOCS=OFF \</span><br><span class="line">        -DBUILD_EXAMPLES=OFF \</span><br><span class="line">        -DBUILD_JASPER=OFF \</span><br><span class="line">        -DBUILD_OPENEXR=OFF \</span><br><span class="line">        -DWITH_FFMPEG=ON \</span><br><span class="line">        -DWITH_EIGEN=ON \</span><br><span class="line">        -DWITH_LAPACK=OFF</span><br><span class="line">    make -j12</span><br><span class="line">    make install</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##################################</span></span><br><span class="line"><span class="comment">## gtsam</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Building gtsam...&quot;</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$THIRD_DIR</span>/gtsam-4.0.3&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CLEAN_BUILD</span>&quot;</span> = <span class="literal">true</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">rm</span> -rf build</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">mkdir</span> -p build</span><br><span class="line">    <span class="built_in">cd</span> build</span><br><span class="line">    cmake .. <span class="string">&quot;<span class="variable">$&#123;COMMON_CMAKE_ARGS[@]&#125;</span>&quot;</span></span><br><span class="line">    make -j<span class="variable">$NUM_PARALLEL_BUILDS</span></span><br><span class="line">    make install</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$SPLIT_LINE</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;All third party libraries are built and installed to <span class="variable">$INSTALL_DIR</span>!&quot;</span></span><br></pre></td></tr></table></figure>
 <p>更新gcc和g++到gcc-9 g++-9</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## author: ydx</span></span><br><span class="line"><span class="comment">## description: update gcc and g++ to gcc-9 g++-9 for C++17 support</span></span><br><span class="line"><span class="comment">## date: 2023-12-25</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Trying to update gcc and g++ to gcc-9 g++-9 for C++17 support!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;You may need to enter your password!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;add-apt-repository ppa:ubuntu-toolchain-r/test&quot;</span></span><br><span class="line">sudo add-apt-repository ppa:ubuntu-toolchain-r/test</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;update apt-get&quot;</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;install gcc-9 g++-9, wait a moment!&quot;</span></span><br><span class="line">sudo apt-get install gcc-9 g++-9</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;set gcc-9 g++-9 as default gcc g++&quot;</span></span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 20 --slave /usr/bin/g++ g++ /usr/bin/g++-9</span><br></pre></td></tr></table></figure>
 <p>更新cmake到3.22.1</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## author: ydx</span></span><br><span class="line"><span class="comment">## description: 升级cmake到3.22.1</span></span><br><span class="line"><span class="comment">## date: 2023-12-25</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"></span><br><span class="line">CMAKE_CURRENT_VERSION=`cmake --version | grep version | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>`</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Trying to update cmake&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/package</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Downloading cmake-3.22.1.tar.gz&quot;</span></span><br><span class="line">wget https://cmake.org/files/v3.22/cmake-3.22.1.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Unpacking cmake-3.22.1.tar.gz&quot;</span></span><br><span class="line">tar -zxvf cmake-3.22.1.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Installing cmake-3.22.1&quot;</span></span><br><span class="line"><span class="built_in">cd</span> cmake-3.22.1</span><br><span class="line"><span class="built_in">chmod</span> a+x ./configure</span><br><span class="line">sh ./configure</span><br><span class="line"></span><br><span class="line">NUM_CORES=`(<span class="built_in">which</span> <span class="built_in">nproc</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; <span class="built_in">nproc</span>) || sysctl -n hw.logicalcpu || <span class="built_in">echo</span> 1`</span><br><span class="line">make -j<span class="variable">$NUM_CORES</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Trying to install cmake-3.22.1 to system directory, you may need to enter your password!&quot;</span></span><br><span class="line">sudo make install</span><br><span class="line">sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force</span><br><span class="line"></span><br><span class="line">CMAKE_NEW_VERSION=`cmake --version | grep version | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>`</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CMAKE_NEW_VERSION</span>&quot;</span> = <span class="string">&quot;<span class="variable">$CMAKE_CURRENT_VERSION</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Failed to update cmake!&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Successfully update cmake from <span class="variable">$CMAKE_CURRENT_VERSION</span> to <span class="variable">$CMAKE_NEW_VERSION</span>!&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -280,539 +288,39 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="ydx 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="ydx 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/bash/" rel="tag"><i class="fa fa-tag"></i> bash</a>
+          </div>
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/11/%E6%97%A5%E8%AF%AD/00-%E6%97%A5%E8%AF%AD%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/11/%E6%97%A5%E8%AF%AD/00-%E6%97%A5%E8%AF%AD%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/" class="post-title-link" itemprop="url">日语初步认识</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-03-11 17:09:04" itemprop="dateCreated datePublished" datetime="2024-03-11T17:09:04+08:00">2024-03-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>520</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="日语的构成"><a href="#日语的构成" class="headerlink" title="日语的构成"></a>日语的构成</h2><p>日本文字是由汉字、平假名、片假名三种文字构成的，另外还有罗马字，汉字是从中国传入的，平假名和片假名是日本自己创造的。日本的汉字是从中国传入的，但是在日本的发展过程中，汉字的读音和意义发生了变化，所以有些汉字在日本和中国的读音和意义是不一样的。平假名和片假名是日本自己创造的，它们是由汉字演变而来的，所以它们的构造和汉字有一定的关系。</p>
-<p>日语中的汉字有一些会和中国使用的汉字有些区别，还有一些汉字完全是日本自己创造的，这些汉字叫做“和製汉字”。</p>
-<p>日本在古代时没有文字但是有语言，当汉字传入后，同样的意义的日语单词和汉字的读音对应起来，这样就形成了日语的书写系统。一些名词比如“山”会有日本古代自己的读音“やま”和类似汉语的读音“さん”，模仿中国古汉语的发音称为“音读”，使用日本固有发音，借用中国汉字进行表意的称为“训读”。</p>
-<p>假名则分为平假名和片假名，平假名是由汉字的草书演变而来，片假名则是由汉字的偏旁部首演变而来。</p>
-<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/202403111346376.png" alt="image.png|300"></p>
-<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/202403111349425.png" alt="image.png|300"></p>
-<p>平假名和片假名是一一对应的，不过片假名的使用范围比较窄，一般用于外来词、人名、拟声词或者动植物名称。</p>
-<p>罗马字是日本在明治维新时期引入的，它是由葡萄牙传教士在日本传教时引入的，罗马字是用来表示日语的发音的，它是由26个字母组成的，日本人在学习日语的时候会先学习罗马字，然后再学习汉字和假名。罗马字的用途包括：广告招牌、打字。</p>
-<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/20240311140328.png" alt="20240311140328"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">PicGo图床设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-02-08 17:52:47" itemprop="dateCreated datePublished" datetime="2024-02-08T17:52:47+08:00">2024-02-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>444</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="图床的介绍"><a href="#图床的介绍" class="headerlink" title="图床的介绍"></a>图床的介绍</h2><p>图床在台湾叫做 <code>網路相簿</code>，实际上就是可以将图片存放在网络上。好处在于比如在 markdown 中插入图片，假如使用本地图片的方式，那么当博客的位置发生变更时图片将会失效。尽管可以通过相对路径的方式部分程度的进行解决，但是假如想要将 markdown 文件分享给别人，如果想要他获得相同的显示效果就必须把图片连同 markdown 文件一起分享出去。而使用图床就可以做到 markdown 的显示效果在各个地方都是相同的，并且减少空间占用。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">Hexo+Next配置博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-02-07 16:06:04" itemprop="dateCreated datePublished" datetime="2024-02-07T16:06:04+08:00">2024-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>经过一段时间搭建成功了个人博客，可以进入<a href="https://slam-learner.github.io/">我的个人博客</a> 查看效果。这里对于搭建以及在默认设置的基础上做出的修改进行一下纪录。由于有一些设置是在很久以前完成的，步骤以及一些说明可能存在遗漏或者不完全正确，希望能够谅解并指正。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/11/%E6%97%A5%E8%AF%AD/00-%E6%97%A5%E8%AF%AD%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/" rel="prev" title="日语初步认识">
+                  <i class="fa fa-angle-left"></i> 日语初步认识
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">CMakeLists模板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-02-06 17:09:04" itemprop="dateCreated datePublished" datetime="2024-02-06T17:09:04+08:00">2024-02-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%A8%A1%E6%9D%BF/" itemprop="url" rel="index"><span itemprop="name">模板</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>38</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="CMakeLists模板"><a href="#CMakeLists模板" class="headerlink" title="CMakeLists模板"></a>CMakeLists模板</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/02/06/%E6%A8%A1%E6%9D%BF/json%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/06/%E6%A8%A1%E6%9D%BF/json%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">VS Code JSON 文件模板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-02-06 17:09:04" itemprop="dateCreated datePublished" datetime="2024-02-06T17:09:04+08:00">2024-02-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%A8%A1%E6%9D%BF/" itemprop="url" rel="index"><span itemprop="name">模板</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>22</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="VS-Code-JSON-文件模板"><a href="#VS-Code-JSON-文件模板" class="headerlink" title="VS Code JSON 文件模板"></a>VS Code JSON 文件模板</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/06/%E6%A8%A1%E6%9D%BF/json%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
@@ -821,6 +329,8 @@
 
 
 
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -931,7 +441,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d1546d731a9f30cc80127d57142a482b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"5a08cc11d3de8f4dd1d03dd81762273c"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
