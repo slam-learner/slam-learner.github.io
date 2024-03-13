@@ -154,18 +154,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -190,6 +190,104 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.gif">
+      <meta itemprop="name" content="ydx">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ydxの博客">
+      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ydxの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/" class="post-title-link" itemprop="url">ros bad file</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-03-13 15:06:04 / 修改时间：15:15:11" itemprop="dateCreated datePublished" datetime="2024-03-13T15:06:04+08:00">2024-03-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url" rel="index"><span itemprop="name">问题解决</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>242</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/env_cached.sh: 12: <span class="built_in">export</span>: Files/Microsoft: bad variable name</span><br><span class="line">CMake Error at /opt/ros/melodic/share/catkin/cmake/safe_execute_process.cmake:11 (message):</span><br><span class="line">  </span><br><span class="line">  execute_process(/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/env_cached.sh</span><br><span class="line">  <span class="string">&quot;/usr/bin/python2&quot;</span> <span class="string">&quot;/usr/bin/empy&quot;</span> <span class="string">&quot;--raw-errors&quot;</span> <span class="string">&quot;-F&quot;</span></span><br><span class="line">  <span class="string">&quot;/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/order_packages.py&quot;</span></span><br><span class="line">  <span class="string">&quot;-o&quot;</span></span><br><span class="line">  <span class="string">&quot;/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/order_packages.cmake&quot;</span></span><br><span class="line">  <span class="string">&quot;/opt/ros/melodic/share/catkin/cmake/em/order_packages.cmake.em&quot;</span>) returned</span><br><span class="line">  error code 2</span><br><span class="line">Call Stack (most recent call first):</span><br><span class="line">  /opt/ros/melodic/share/catkin/cmake/em_expand.cmake:25 (safe_execute_process)</span><br><span class="line">  /opt/ros/melodic/share/catkin/cmake/catkin_workspace.cmake:35 (em_expand)</span><br><span class="line">  CMakeLists.txt:69 (catkin_workspace)</span><br></pre></td></tr></table></figure>
+<p>由第一行的<code>export: Files/Microsoft: bad variable name</code>可以看出是某个环境变量中有类似<code>Program Files/Microsoft</code>这样的路径导致的错误。显然这和WSL的路径有关。通过在网上查找资料，发现了<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1354999/bad-variable-name-error-on-wsl">askubuntu.com上面的一个帖子</a>有一个类似的问题描述，这里参照第二个回答，先在<code>/etc/wsl.conf</code>文件添加了下面两行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>如果在诸如<code>~/.bashrc</code>或者<code>~/.zshrc</code>文件中添加了类似<code>export PATH=$PATH:/mnt/c/Windows/System32</code>这样的路径，也需要将这些路径注释掉。</p>
+<p>然后在<code>PowerShell</code>中执行<code>wsl --shutdown</code>命令彻底关闭WSL后重启WSL，重新编译时不再出现这个错误。在编译完成后，需要将之前完成的更改恢复，否则诸如VSCode等工具将无法正常使用。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -229,7 +327,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-03-13 13:52:04 / 修改时间：13:57:36" itemprop="dateCreated datePublished" datetime="2024-03-13T13:52:04+08:00">2024-03-13</time>
+      <time title="创建时间：2024-03-13 13:52:04 / 修改时间：15:15:11" itemprop="dateCreated datePublished" datetime="2024-03-13T13:52:04+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -333,7 +431,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
+      <time title="修改时间：2024-03-13 15:15:11" itemprop="dateModified" datetime="2024-03-13T15:15:11+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -440,7 +538,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
+      <time title="修改时间：2024-03-13 15:15:11" itemprop="dateModified" datetime="2024-03-13T15:15:11+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -546,7 +644,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
+      <time title="修改时间：2024-03-13 15:15:11" itemprop="dateModified" datetime="2024-03-13T15:15:11+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -652,7 +750,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
+      <time title="修改时间：2024-03-13 15:15:11" itemprop="dateModified" datetime="2024-03-13T15:15:11+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -758,7 +856,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 13:57:36" itemprop="dateModified" datetime="2024-03-13T13:57:36+08:00">2024-03-13</time>
+      <time title="修改时间：2024-03-13 15:15:11" itemprop="dateModified" datetime="2024-03-13T15:15:11+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -846,7 +944,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

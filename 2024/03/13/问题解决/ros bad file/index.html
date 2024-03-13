@@ -21,26 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"slam-learner.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":200},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="江苏大学 | 车辆工程 | SLAM">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ydxの博客">
-<meta property="og:url" content="https://slam-learner.github.io/tags/Hexo/index.html">
+    <meta name="description" content="问题描述在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示： 1234567891011121314&#x2F;home&#x2F;ydx&#x2F;code&#x2F;CPP&#x2F;download_codes&#x2F;autonomous_yhs_fr07&#x2F;build&#x2F;catkin_generated&#x2F;env_cached.sh: 12: export: Files&#x2F;Microsoft: bad variable nameCM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ros bad file">
+<meta property="og:url" content="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/index.html">
 <meta property="og:site_name" content="ydxの博客">
-<meta property="og:description" content="江苏大学 | 车辆工程 | SLAM">
+<meta property="og:description" content="问题描述在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示： 1234567891011121314&#x2F;home&#x2F;ydx&#x2F;code&#x2F;CPP&#x2F;download_codes&#x2F;autonomous_yhs_fr07&#x2F;build&#x2F;catkin_generated&#x2F;env_cached.sh: 12: export: Files&#x2F;Microsoft: bad variable nameCM">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-13T07:06:04.000Z">
+<meta property="article:modified_time" content="2024-03-13T07:15:11.531Z">
 <meta property="article:author" content="ydx">
-<meta property="article:tag" content="VSLAM IMU LIDAR GNSS INSS">
+<meta property="article:tag" content="问题解决">
+<meta property="article:tag" content="ROS">
+<meta property="article:tag" content="WSL">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://slam-learner.github.io/tags/Hexo/">
+<link rel="canonical" href="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/Hexo/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/","path":"2024/03/13/问题解决/ros bad file/","title":"ros bad file"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: Hexo | ydxの博客</title>
+<title>ros bad file | ydxの博客</title>
   
 
 
@@ -127,7 +131,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -140,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -189,51 +194,148 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Hexo
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.gif">
+      <meta itemprop="name" content="ydx">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ydxの博客">
+      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ros bad file | ydxの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ros bad file
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+
+      <time title="创建时间：2024-03-13 15:06:04 / 修改时间：15:15:11" itemprop="dateCreated datePublished" datetime="2024-03-13T15:06:04+08:00">2024-03-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url" rel="index"><span itemprop="name">问题解决</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>242</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/env_cached.sh: 12: <span class="built_in">export</span>: Files/Microsoft: bad variable name</span><br><span class="line">CMake Error at /opt/ros/melodic/share/catkin/cmake/safe_execute_process.cmake:11 (message):</span><br><span class="line">  </span><br><span class="line">  execute_process(/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/env_cached.sh</span><br><span class="line">  <span class="string">&quot;/usr/bin/python2&quot;</span> <span class="string">&quot;/usr/bin/empy&quot;</span> <span class="string">&quot;--raw-errors&quot;</span> <span class="string">&quot;-F&quot;</span></span><br><span class="line">  <span class="string">&quot;/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/order_packages.py&quot;</span></span><br><span class="line">  <span class="string">&quot;-o&quot;</span></span><br><span class="line">  <span class="string">&quot;/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/order_packages.cmake&quot;</span></span><br><span class="line">  <span class="string">&quot;/opt/ros/melodic/share/catkin/cmake/em/order_packages.cmake.em&quot;</span>) returned</span><br><span class="line">  error code 2</span><br><span class="line">Call Stack (most recent call first):</span><br><span class="line">  /opt/ros/melodic/share/catkin/cmake/em_expand.cmake:25 (safe_execute_process)</span><br><span class="line">  /opt/ros/melodic/share/catkin/cmake/catkin_workspace.cmake:35 (em_expand)</span><br><span class="line">  CMakeLists.txt:69 (catkin_workspace)</span><br></pre></td></tr></table></figure>
+<p>由第一行的<code>export: Files/Microsoft: bad variable name</code>可以看出是某个环境变量中有类似<code>Program Files/Microsoft</code>这样的路径导致的错误。显然这和WSL的路径有关。通过在网上查找资料，发现了<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1354999/bad-variable-name-error-on-wsl">askubuntu.com上面的一个帖子</a>有一个类似的问题描述，这里参照第二个回答，先在<code>/etc/wsl.conf</code>文件添加了下面两行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>如果在诸如<code>~/.bashrc</code>或者<code>~/.zshrc</code>文件中添加了类似<code>export PATH=$PATH:/mnt/c/Windows/System32</code>这样的路径，也需要将这些路径注释掉。</p>
+<p>然后在<code>PowerShell</code>中执行<code>wsl --shutdown</code>命令彻底关闭WSL后重启WSL，重新编译时不再出现这个错误。在编译完成后，需要将之前完成的更改恢复，否则诸如VSCode等工具将无法正常使用。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-02-07T16:06:04+08:00"
-              content="2024-02-07">
-          02-07
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="ydx 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="ydx 支付宝">
+        <span>支付宝</span>
       </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/" itemprop="url">
-          <span itemprop="name">Hexo+Next配置博客</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag"><i class="fa fa-tag"></i> 问题解决</a>
+              <a href="/tags/ROS/" rel="tag"><i class="fa fa-tag"></i> ROS</a>
+              <a href="/tags/WSL/" rel="tag"><i class="fa fa-tag"></i> WSL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/" rel="prev" title="bash脚本">
+                  <i class="fa fa-angle-left"></i> bash脚本
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -344,7 +446,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"7237274eeb46d719122ece7101759624"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6fbf78566e332b098bd3ab1ba74494fb"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
