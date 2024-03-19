@@ -1,3 +1,4 @@
+https://slam-learner.github.io/tags/index.html
 https://slam-learner.github.io/2024/03/11/%E6%97%A5%E8%AF%AD/00-%E6%97%A5%E8%AF%AD%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/
 https://slam-learner.github.io/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/
 https://slam-learner.github.io/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/
@@ -8,7 +9,6 @@ https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%
 https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/
 https://slam-learner.github.io/404.html
 https://slam-learner.github.io/categories/index.html
-https://slam-learner.github.io/tags/index.html
 https://slam-learner.github.io/
 https://slam-learner.github.io/tags/%E6%97%A5%E8%AF%AD/
 https://slam-learner.github.io/tags/CMake/
