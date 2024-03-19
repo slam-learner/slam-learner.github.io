@@ -21,30 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"slam-learner.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":200},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="问题描述在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示： 1234567891011121314&#x2F;home&#x2F;ydx&#x2F;code&#x2F;CPP&#x2F;download_codes&#x2F;autonomous_yhs_fr07&#x2F;build&#x2F;catkin_generated&#x2F;env_cached.sh: 12: export: Files&#x2F;Microsoft: bad variable nameCM">
+    <meta name="description" content="问题描述在一个较大的ros项目中，完整的启动所有节点，需要使用多个终端窗口分别启动不同的节点。这样的操作非常繁琐，所以编写了一个脚本启动所有的节点并在Ubuntu的桌面上创建了一个快捷方式点击即可运行。 脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ros bad file">
-<meta property="og:url" content="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/index.html">
+<meta property="og:title" content="脚本桌面快捷启动">
+<meta property="og:url" content="https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/index.html">
 <meta property="og:site_name" content="ydxの博客">
-<meta property="og:description" content="问题描述在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示： 1234567891011121314&#x2F;home&#x2F;ydx&#x2F;code&#x2F;CPP&#x2F;download_codes&#x2F;autonomous_yhs_fr07&#x2F;build&#x2F;catkin_generated&#x2F;env_cached.sh: 12: export: Files&#x2F;Microsoft: bad variable nameCM">
+<meta property="og:description" content="问题描述在一个较大的ros项目中，完整的启动所有节点，需要使用多个终端窗口分别启动不同的节点。这样的操作非常繁琐，所以编写了一个脚本启动所有的节点并在Ubuntu的桌面上创建了一个快捷方式点击即可运行。 脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-13T07:06:04.000Z">
+<meta property="article:published_time" content="2024-03-19T06:43:47.000Z">
 <meta property="article:modified_time" content="2024-03-19T06:54:26.740Z">
 <meta property="article:author" content="ydx">
-<meta property="article:tag" content="问题解决">
-<meta property="article:tag" content="ROS">
-<meta property="article:tag" content="WSL">
+<meta property="article:tag" content="bash">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/">
+<link rel="canonical" href="https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/","path":"2024/03/13/问题解决/ros bad file/","title":"ros bad file"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/","path":"2024/03/19/环境配置/脚本桌面快捷启动/","title":"脚本桌面快捷启动"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>ros bad file | ydxの博客</title>
+<title>脚本桌面快捷启动 | ydxの博客</title>
   
 
 
@@ -144,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">生成桌面快捷方式</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -205,7 +204,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.gif">
@@ -218,12 +217,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="ros bad file | ydxの博客">
+      <meta itemprop="name" content="脚本桌面快捷启动 | ydxの博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ros bad file
+          脚本桌面快捷启动
         </h1>
 
         <div class="post-meta-container">
@@ -233,15 +232,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-03-13 15:06:04" itemprop="dateCreated datePublished" datetime="2024-03-13T15:06:04+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-19 14:54:26" itemprop="dateModified" datetime="2024-03-19T14:54:26+08:00">2024-03-19</time>
+      <time title="创建时间：2024-03-19 14:43:47 / 修改时间：14:54:26" itemprop="dateCreated datePublished" datetime="2024-03-19T14:43:47+08:00">2024-03-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,7 +242,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url" rel="index"><span itemprop="name">问题解决</span></a>
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
         </span>
     </span>
 
@@ -266,7 +259,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>242</span>
+      <span>226</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -283,12 +276,17 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/env_cached.sh: 12: <span class="built_in">export</span>: Files/Microsoft: bad variable name</span><br><span class="line">CMake Error at /opt/ros/melodic/share/catkin/cmake/safe_execute_process.cmake:11 (message):</span><br><span class="line">  </span><br><span class="line">  execute_process(/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/env_cached.sh</span><br><span class="line">  <span class="string">&quot;/usr/bin/python2&quot;</span> <span class="string">&quot;/usr/bin/empy&quot;</span> <span class="string">&quot;--raw-errors&quot;</span> <span class="string">&quot;-F&quot;</span></span><br><span class="line">  <span class="string">&quot;/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/order_packages.py&quot;</span></span><br><span class="line">  <span class="string">&quot;-o&quot;</span></span><br><span class="line">  <span class="string">&quot;/home/ydx/code/CPP/download_codes/autonomous_yhs_fr07/build/catkin_generated/order_packages.cmake&quot;</span></span><br><span class="line">  <span class="string">&quot;/opt/ros/melodic/share/catkin/cmake/em/order_packages.cmake.em&quot;</span>) returned</span><br><span class="line">  error code 2</span><br><span class="line">Call Stack (most recent call first):</span><br><span class="line">  /opt/ros/melodic/share/catkin/cmake/em_expand.cmake:25 (safe_execute_process)</span><br><span class="line">  /opt/ros/melodic/share/catkin/cmake/catkin_workspace.cmake:35 (em_expand)</span><br><span class="line">  CMakeLists.txt:69 (catkin_workspace)</span><br></pre></td></tr></table></figure>
-<p>由第一行的<code>export: Files/Microsoft: bad variable name</code>可以看出是某个环境变量中有类似<code>Program Files/Microsoft</code>这样的路径导致的错误。显然这和WSL的路径有关。通过在网上查找资料，发现了<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1354999/bad-variable-name-error-on-wsl">askubuntu.com上面的一个帖子</a>有一个类似的问题描述，这里参照第二个回答，先在<code>/etc/wsl.conf</code>文件添加了下面两行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>如果在诸如<code>~/.bashrc</code>或者<code>~/.zshrc</code>文件中添加了类似<code>export PATH=$PATH:/mnt/c/Windows/System32</code>这样的路径，也需要将这些路径注释掉。</p>
-<p>然后在<code>PowerShell</code>中执行<code>wsl --shutdown</code>命令彻底关闭WSL后重启WSL，重新编译时不再出现这个错误。在编译完成后，需要将之前完成的更改恢复，否则诸如VSCode等工具将无法正常使用。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在一个较大的ros项目中，完整的启动所有节点，需要使用多个终端窗口分别启动不同的节点。这样的操作非常繁琐，所以编写了一个脚本启动所有的节点并在Ubuntu的桌面上创建了一个快捷方式点击即可运行。</p>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## author: ydx</span></span><br><span class="line"><span class="comment">## description: 运行项目</span></span><br><span class="line"><span class="comment">## date: 2024-03-15</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印用法说明</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;usage: run_sim.sh [USE_BAG_FILE] [START_TYPE]&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  USE_BAG_FILE: 是否使用bag文件, true or false, 默认为true&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  START_TYPE: 启动类型, 0: 使用bash终端运行, 1: 使用xterm, 2: 使用gnome-terminal, 默认为1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认参数</span></span><br><span class="line">USE_BAG_FILE=<span class="string">&quot;<span class="variable">$&#123;1:-true&#125;</span>&quot;</span></span><br><span class="line">START_TYPE=<span class="string">&quot;<span class="variable">$&#123;2:-1&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取项目目录</span></span><br><span class="line">PROJ_DIR=<span class="string">&quot;<span class="subst">$(realpath $(dirname <span class="string">&quot;<span class="variable">$&#123;BASH_SOURCE[0]&#125;</span>&quot;</span>)</span>/..)&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要使用bag文件, 则播放bag文件</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$USE_BAG_FILE</span>&quot;</span> = <span class="string">&quot;true&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment"># 启动 roscore</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Starting roscore...&quot;</span></span><br><span class="line">    roscore &amp;</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Playing rosbag...&quot;</span></span><br><span class="line">    rosbag play <span class="string">&quot;<span class="variable">$PROJ_DIR</span>/data/lidar_imu_2024-03-13.bag&quot;</span> &amp;</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动节点函数</span></span><br><span class="line"><span class="function"><span class="title">start_node</span></span>() &#123;</span><br><span class="line">    <span class="built_in">local</span> package=<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    <span class="built_in">local</span> launch_file=<span class="string">&quot;<span class="variable">$2</span>&quot;</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$START_TYPE</span> <span class="keyword">in</span></span><br><span class="line">        0)</span><br><span class="line">            <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$PROJ_DIR</span>/devel/setup.bash&quot;</span>; roslaunch <span class="string">&quot;<span class="variable">$package</span>&quot;</span> <span class="string">&quot;<span class="variable">$launch_file</span>&quot;</span> &amp;</span><br><span class="line">            ;;</span><br><span class="line">        1)</span><br><span class="line">            xterm -e <span class="string">&quot;source <span class="variable">$PROJ_DIR</span>/devel/setup.bash; roslaunch <span class="variable">$package</span> <span class="variable">$launch_file</span>&quot;</span> &amp;</span><br><span class="line">            ;;</span><br><span class="line">        2)</span><br><span class="line">            gnome-terminal --tab --title=<span class="string">&quot;<span class="variable">$launch_file</span>&quot;</span> -- bash -c <span class="string">&quot;source <span class="variable">$PROJ_DIR</span>/devel/setup.bash; roslaunch <span class="variable">$package</span> <span class="variable">$launch_file</span>&quot;</span> &amp;</span><br><span class="line">            ;;</span><br><span class="line">        *)</span><br><span class="line">            <span class="built_in">echo</span> <span class="string">&quot;Invalid START_TYPE: <span class="variable">$START_TYPE</span>&quot;</span></span><br><span class="line">            <span class="built_in">exit</span> 1</span><br><span class="line">            ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数：停止所有ROS节点</span></span><br><span class="line"><span class="function"><span class="title">stop_ros_nodes</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Stopping all ROS nodes...&quot;</span></span><br><span class="line">    killall roscore rosmaster rosbag roslaunch</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置Ctrl-C信号处理函数</span></span><br><span class="line"><span class="built_in">trap</span> <span class="string">&#x27;stop_ros_nodes&#x27;</span> SIGINT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动各个节点</span></span><br><span class="line">start_node <span class="string">&quot;rslidar_sdk&quot;</span> <span class="string">&quot;start.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;ros_mscl&quot;</span> <span class="string">&quot;microstrain.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;lidar_localization&quot;</span> <span class="string">&quot;run.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;call_planning&quot;</span> <span class="string">&quot;localization.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;motion_control&quot;</span> <span class="string">&quot;motion_control.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;yhs_can_control&quot;</span> <span class="string">&quot;yhs_can_control.launch&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待所有后台进程结束</span></span><br><span class="line"><span class="built_in">wait</span></span><br></pre></td></tr></table></figure>
+<h2 id="生成桌面快捷方式"><a href="#生成桌面快捷方式" class="headerlink" title="生成桌面快捷方式"></a>生成桌面快捷方式</h2><p>创建一个新文件，内容如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=Your_Script_Name</span><br><span class="line">Exec=/path/to/your_script.sh</span><br><span class="line">Terminal=true</span><br><span class="line">Icon=/path/to/your_icon.png</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Name：快捷方式的名称。</li>
+<li>Exec：要执行的脚本文件的完整路径。</li>
+<li>Terminal：如果脚本需要在终端中运行，设置为 true；否则设置为 false。</li>
+<li>Icon：可选，快捷方式的图标文件的完整路径。</li>
+</ul>
+<p>将文件保存到桌面或 ~/.local/share/applications/ 目录下。如果保存到桌面，文件名以需要使用 .desktop 后缀，例如 your_script.desktop。如果保存到 ~/.local/share/applications/ 目录，则无需添加 .desktop 后缀。</p>
 
     </div>
 
@@ -316,23 +314,19 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag"><i class="fa fa-tag"></i> 问题解决</a>
-              <a href="/tags/ROS/" rel="tag"><i class="fa fa-tag"></i> ROS</a>
-              <a href="/tags/WSL/" rel="tag"><i class="fa fa-tag"></i> WSL</a>
+              <a href="/tags/bash/" rel="tag"><i class="fa fa-tag"></i> bash</a>
+              <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/03/13/%E6%A8%A1%E6%9D%BF/bash%E8%84%9A%E6%9C%AC/" rel="prev" title="bash脚本">
-                  <i class="fa fa-angle-left"></i> bash脚本
+                <a href="/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/" rel="prev" title="ros bad file">
+                  <i class="fa fa-angle-left"></i> ros bad file
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/" rel="next" title="脚本桌面快捷启动">
-                  脚本桌面快捷启动 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -455,7 +449,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6fbf78566e332b098bd3ab1ba74494fb"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a69c1eb9e34d3f4fb6cda40e60ca2b8e"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
