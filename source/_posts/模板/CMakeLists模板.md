@@ -99,4 +99,3 @@ message(STATUS "Setting up dependencies...")
 list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../cmake/modules")
 list(PREPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_LIST_DIR}/../install")
 ```
-
