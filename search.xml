@@ -249,6 +249,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Updatedb排除文件夹</title>
+    <url>/2024/03/22/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Updatedb%E6%8E%92%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
+    <content><![CDATA[<p><code>/etc/updatedb.conf</code></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">PRUNE_BIND_MOUNTS=&quot;yes&quot;</span><br><span class="line"># PRUNENAMES=&quot;.git .bzr .hg .svn&quot;</span><br><span class="line">PRUNEPATHS=&quot;/tmp /var/spool /media /var/lib/os-prober /var/lib/ceph /home/.ecryptfs /var/lib/schroot /mnt/c /mnt/d&quot;</span><br><span class="line">PRUNEFS=&quot;NFS nfs nfs4 rpc_pipefs afs binfmt_misc proc smbfs autofs iso9660 ncpfs coda devpts ftpfs devfs devtmpfs fuse.mfs shfs sysfs cifs lustre tmpfs usbfs udf fuse.glusterfs fuse.sshfs curlftpfs ceph fuse.ceph fuse.rozofs ecryptfs fusesmb&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Updatedb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PicGo图床设置</title>
     <url>/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="图床的介绍"><a href="#图床的介绍" class="headerlink" title="图床的介绍"></a>图床的介绍</h2><p>图床在台湾叫做 <code>網路相簿</code>，实际上就是可以将图片存放在网络上。好处在于比如在 markdown 中插入图片，假如使用本地图片的方式，那么当博客的位置发生变更时图片将会失效。尽管可以通过相对路径的方式部分程度的进行解决，但是假如想要将 markdown 文件分享给别人，如果想要他获得相同的显示效果就必须把图片连同 markdown 文件一起分享出去。而使用图床就可以做到 markdown 的显示效果在各个地方都是相同的，并且减少空间占用。</p>
