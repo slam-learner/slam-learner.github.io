@@ -21,29 +21,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"slam-learner.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":200},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="问题描述在一个较大的ros项目中，完整的启动所有节点，需要使用多个终端窗口分别启动不同的节点。这样的操作非常繁琐，所以编写了一个脚本启动所有的节点并在Ubuntu的桌面上创建了一个快捷方式点击即可运行。 脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
+    <meta name="description" content="备份终止正在运行的 wsl 1wsl --shutdown ubuntu 名字用 wsl -l -v 查看，这里以导出到 G 盘下，命名为 Ubuntu_bak.tar 为例 1wsl --export ubuntu-22.04 G:\Ubuntu_bak.tar 注销注销之前的 wsl 1wsl --unregister ubuntu-22.04 导入1wsl --import ubuntu-2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="脚本桌面快捷启动">
-<meta property="og:url" content="https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/index.html">
+<meta property="og:title" content="WSL备份与迁移">
+<meta property="og:url" content="https://slam-learner.github.io/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/index.html">
 <meta property="og:site_name" content="ydxの博客">
-<meta property="og:description" content="问题描述在一个较大的ros项目中，完整的启动所有节点，需要使用多个终端窗口分别启动不同的节点。这样的操作非常繁琐，所以编写了一个脚本启动所有的节点并在Ubuntu的桌面上创建了一个快捷方式点击即可运行。 脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
+<meta property="og:description" content="备份终止正在运行的 wsl 1wsl --shutdown ubuntu 名字用 wsl -l -v 查看，这里以导出到 G 盘下，命名为 Ubuntu_bak.tar 为例 1wsl --export ubuntu-22.04 G:\Ubuntu_bak.tar 注销注销之前的 wsl 1wsl --unregister ubuntu-22.04 导入1wsl --import ubuntu-2">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-19T06:43:47.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/202403271350893.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/![[%E5%90%AF%E7%94%A8%E6%88%96%E5%85%B3%E9%97%ADWindows%E5%8A%9F%E8%83%BD%E9%80%89%E9%A1%B9%E5%8D%A1.png]].png">
+<meta property="og:image" content="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/![[18.04LTS%E5%95%86%E5%BA%97%E5%AE%89%E8%A3%85.png]].png">
+<meta property="article:published_time" content="2024-03-27T05:40:07.000Z">
 <meta property="article:modified_time" content="2024-03-27T05:54:26.806Z">
 <meta property="article:author" content="ydx">
-<meta property="article:tag" content="bash">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="WSL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/202403271350893.png">
 
 
-<link rel="canonical" href="https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/">
+<link rel="canonical" href="https://slam-learner.github.io/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/","path":"2024/03/19/环境配置/脚本桌面快捷启动/","title":"脚本桌面快捷启动"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/","path":"2024/03/27/环境配置/WSL备份与迁移/","title":"WSL备份与迁移"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>脚本桌面快捷启动 | ydxの博客</title>
+<title>WSL备份与迁移 | ydxの博客</title>
   
 
 
@@ -143,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">生成桌面快捷方式</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD"><span class="nav-number">1.</span> <span class="nav-text">备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%94%80"><span class="nav-number">2.</span> <span class="nav-text">注销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-number">3.</span> <span class="nav-text">导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-wsl-%E7%89%88%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">升级 wsl 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E7%A9%BA%E9%97%B4"><span class="nav-number">5.</span> <span class="nav-text">压缩空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E5%BC%80%E5%90%AF%E6%88%96%E5%AE%89%E8%A3%85%E7%9A%84%E5%8A%9F%E8%83%BD-%E5%8C%85"><span class="nav-number">6.</span> <span class="nav-text">需要开启或安装的功能&#x2F;包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -204,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/19/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E8%84%9A%E6%9C%AC%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8/">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar2.gif">
@@ -217,12 +220,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="脚本桌面快捷启动 | ydxの博客">
+      <meta itemprop="name" content="WSL备份与迁移 | ydxの博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          脚本桌面快捷启动
+          WSL备份与迁移
         </h1>
 
         <div class="post-meta-container">
@@ -232,15 +235,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-03-19 14:43:47" itemprop="dateCreated datePublished" datetime="2024-03-19T14:43:47+08:00">2024-03-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="创建时间：2024-03-27 13:40:07 / 修改时间：13:54:26" itemprop="dateCreated datePublished" datetime="2024-03-27T13:40:07+08:00">2024-03-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,14 +262,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>225</span>
+      <span>538</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -282,17 +279,40 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在一个较大的ros项目中，完整的启动所有节点，需要使用多个终端窗口分别启动不同的节点。这样的操作非常繁琐，所以编写了一个脚本启动所有的节点并在Ubuntu的桌面上创建了一个快捷方式点击即可运行。</p>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## author: ydx</span></span><br><span class="line"><span class="comment">## description: 运行项目</span></span><br><span class="line"><span class="comment">## date: 2024-03-15</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印用法说明</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;usage: run_sim.sh [USE_BAG_FILE] [START_TYPE]&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  USE_BAG_FILE: 是否使用bag文件, true or false, 默认为true&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;  START_TYPE: 启动类型, 0: 使用bash终端运行, 1: 使用xterm, 2: 使用gnome-terminal, 默认为1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认参数</span></span><br><span class="line">USE_BAG_FILE=<span class="string">&quot;<span class="variable">$&#123;1:-true&#125;</span>&quot;</span></span><br><span class="line">START_TYPE=<span class="string">&quot;<span class="variable">$&#123;2:-1&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取项目目录</span></span><br><span class="line">PROJ_DIR=<span class="string">&quot;<span class="subst">$(realpath $(dirname <span class="string">&quot;<span class="variable">$&#123;BASH_SOURCE[0]&#125;</span>&quot;</span>)</span>/..)&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要使用bag文件, 则播放bag文件</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$USE_BAG_FILE</span>&quot;</span> = <span class="string">&quot;true&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment"># 启动 roscore</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Starting roscore...&quot;</span></span><br><span class="line">    roscore &amp;</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Playing rosbag...&quot;</span></span><br><span class="line">    rosbag play <span class="string">&quot;<span class="variable">$PROJ_DIR</span>/data/lidar_imu_2024-03-13.bag&quot;</span> &amp;</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动节点函数</span></span><br><span class="line"><span class="function"><span class="title">start_node</span></span>() &#123;</span><br><span class="line">    <span class="built_in">local</span> package=<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    <span class="built_in">local</span> launch_file=<span class="string">&quot;<span class="variable">$2</span>&quot;</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$START_TYPE</span> <span class="keyword">in</span></span><br><span class="line">        0)</span><br><span class="line">            <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$PROJ_DIR</span>/devel/setup.bash&quot;</span>; roslaunch <span class="string">&quot;<span class="variable">$package</span>&quot;</span> <span class="string">&quot;<span class="variable">$launch_file</span>&quot;</span> &amp;</span><br><span class="line">            ;;</span><br><span class="line">        1)</span><br><span class="line">            xterm -e <span class="string">&quot;source <span class="variable">$PROJ_DIR</span>/devel/setup.bash; roslaunch <span class="variable">$package</span> <span class="variable">$launch_file</span>&quot;</span> &amp;</span><br><span class="line">            ;;</span><br><span class="line">        2)</span><br><span class="line">            gnome-terminal --tab --title=<span class="string">&quot;<span class="variable">$launch_file</span>&quot;</span> -- bash -c <span class="string">&quot;source <span class="variable">$PROJ_DIR</span>/devel/setup.bash; roslaunch <span class="variable">$package</span> <span class="variable">$launch_file</span>&quot;</span> &amp;</span><br><span class="line">            ;;</span><br><span class="line">        *)</span><br><span class="line">            <span class="built_in">echo</span> <span class="string">&quot;Invalid START_TYPE: <span class="variable">$START_TYPE</span>&quot;</span></span><br><span class="line">            <span class="built_in">exit</span> 1</span><br><span class="line">            ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数：停止所有ROS节点</span></span><br><span class="line"><span class="function"><span class="title">stop_ros_nodes</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Stopping all ROS nodes...&quot;</span></span><br><span class="line">    killall roscore rosmaster rosbag roslaunch</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置Ctrl-C信号处理函数</span></span><br><span class="line"><span class="built_in">trap</span> <span class="string">&#x27;stop_ros_nodes&#x27;</span> SIGINT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动各个节点</span></span><br><span class="line">start_node <span class="string">&quot;rslidar_sdk&quot;</span> <span class="string">&quot;start.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;ros_mscl&quot;</span> <span class="string">&quot;microstrain.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;lidar_localization&quot;</span> <span class="string">&quot;run.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;call_planning&quot;</span> <span class="string">&quot;localization.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;motion_control&quot;</span> <span class="string">&quot;motion_control.launch&quot;</span></span><br><span class="line">start_node <span class="string">&quot;yhs_can_control&quot;</span> <span class="string">&quot;yhs_can_control.launch&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待所有后台进程结束</span></span><br><span class="line"><span class="built_in">wait</span></span><br></pre></td></tr></table></figure>
-<h2 id="生成桌面快捷方式"><a href="#生成桌面快捷方式" class="headerlink" title="生成桌面快捷方式"></a>生成桌面快捷方式</h2><p>创建一个新文件，内容如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=Your_Script_Name</span><br><span class="line">Exec=/path/to/your_script.sh</span><br><span class="line">Terminal=true</span><br><span class="line">Icon=/path/to/your_icon.png</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Name：快捷方式的名称。</li>
-<li>Exec：要执行的脚本文件的完整路径。</li>
-<li>Terminal：如果脚本需要在终端中运行，设置为 true；否则设置为 false。</li>
-<li>Icon：可选，快捷方式的图标文件的完整路径。</li>
+    <div class="post-body" itemprop="articleBody"><h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>终止正在运行的 wsl</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+<p>ubuntu 名字用 wsl -l -v 查看，这里以导出到 G 盘下，命名为 Ubuntu_bak.tar 为例</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --<span class="keyword">export</span> ubuntu-<span class="number">22.04</span> <span class="attr">G</span>:\<span class="title class_">Ubuntu</span>_bak.<span class="property">tar</span></span><br></pre></td></tr></table></figure>
+<h2 id="注销"><a href="#注销" class="headerlink" title="注销"></a>注销</h2><p>注销之前的 wsl</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --unregister ubuntu-22.04</span><br></pre></td></tr></table></figure>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --import ubuntu-22.04 G:\WSL_Ubuntu G:\Ubuntu_bak.tar --version 2</span><br></pre></td></tr></table></figure>
+<h2 id="升级-wsl-版本"><a href="#升级-wsl-版本" class="headerlink" title="升级 wsl 版本"></a>升级 wsl 版本</h2><p>如果之前的 wsl 版本为 wsl1，需要升级到 wsl2 的话，需要执行下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --set-version ubuntu-22.04 2</span><br></pre></td></tr></table></figure>
+<p>如果 powershell 中提示需要升级，那么需要执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+<p>设置默认 wsl 默认版本为 wsl2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --set-default-version 2</span><br></pre></td></tr></table></figure>
+<p>查看安装版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -l -v</span><br></pre></td></tr></table></figure>
+<p><strong>参数解读：</strong><br><em>Ubuntu-22.04</em><br>· 实例名称，可以自己设置，设置后即为第 2 步输入 wsl -l -v 后显示的名称；<br><em>G:\WSL_Ubuntu</em><br>· 导入后的镜像及其相关数据存放路径；<br><em>G:\wsl_nomatlab. Tar</em><br>· 导入的备份，即第 3 步通过 wsl —export 导出的文件；<br><em>–version 2</em><br>· WSL 版本为2</p>
+<p><strong>用户设置</strong><br>方法 1： 管理员身份运行 power shell, 执行 <code>ubuntu2004.exe config --default-user root</code> ,再在 power shell，执行以下命令，可以将 WSL2的默认系统设置为 Ubuntu-20.04。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wslconfig /setdefault Ubuntu-20.04</span><br></pre></td></tr></table></figure>
+<p>方法 2：修改 <code>/etc/wsl.conf</code> 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Set the user when launching a distribution with WSL.</span></span><br><span class="line"></span><br><span class="line">[user]</span><br><span class="line">default=username</span><br></pre></td></tr></table></figure>
+<p>方法 3：在 windows terminal 中按下三角按钮打开设置, 并在命令行设置中进行修改， -d 参数修改发行版本，-u 修改用户。<br><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/202403271350893.png" alt="Windows Terminal设置"></p>
+<h2 id="压缩空间"><a href="#压缩空间" class="headerlink" title="压缩空间"></a>压缩空间</h2><p><code>WSL2</code> 本质上是虚拟机，所以 <code>Windows</code> 会自动创建 <code>vhdx</code> 后缀的虚拟磁盘文件作为存储。这个 <code>vhdx</code> 后缀的虚拟磁盘文件特点是可以自动扩容，但是一般不会自动缩容。一旦有很多文件把它“撑大”，即使把这些文件删除它也不会自动“缩小”。所以删除文件后还需要我们手动进行压缩才能释放磁盘空间。</p>
+<p>首先在 PowerShell 中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭 wsl</span></span><br><span class="line">wsl <span class="literal">--shutdown</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行管理计算机驱动器的 DiskPart命令</span></span><br><span class="line">diskpart</span><br></pre></td></tr></table></figure>
+<p>在新打开的 <code>DiskPart</code> 命令窗口中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选择虚拟磁盘文件</span></span><br><span class="line"><span class="built_in">select</span> vdisk file=<span class="string">&quot;D:\WSL\Ubuntu-18.04\ext4.vhdx&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">compact vdisk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩完毕后卸载磁盘（可能会有报错/警告，正常现象）</span></span><br><span class="line">detach vdisk</span><br></pre></td></tr></table></figure>
+<h2 id="需要开启或安装的功能-包"><a href="#需要开启或安装的功能-包" class="headerlink" title="需要开启或安装的功能/包"></a>需要开启或安装的功能/包</h2><p>直接按 win 键搜索 “启用或关闭 Windows 功能”即可找到选项卡，开启以下功能（不开启也可以正常使用，不清楚具体影响）。</p>
+<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/![[启用或关闭Windows功能选项卡.png]].png" alt="![[启用或关闭Windows功能选项卡.png]]"><br>商店中安装 Ubuntu 18.04 LTS</p>
+<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/![[18.04LTS商店安装.png]].png" alt="![[18.04LTS商店安装.png]]"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/aeef20207355">修改默认登陆用户</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/poena/article/details/106451847">WSL 使用与迁移</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_60634555/article/details/129699609">wsl 版本升级</a></li>
 </ul>
-<p>将文件保存到桌面或 <code>~/.local/share/applications/</code> 目录下。如果保存到桌面，文件名需要使用 <code>.desktop</code> 后缀，例如 <code>your_script.desktop</code>。如果保存到 <code>~/.local/share/applications/</code> 目录，则无需添加 <code>.desktop</code> 后缀。</p>
 
     </div>
 
@@ -320,22 +340,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/bash/" rel="tag"><i class="fa fa-tag"></i> bash</a>
-              <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
+              <a href="/tags/WSL/" rel="tag"><i class="fa fa-tag"></i> WSL</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/" rel="prev" title="ros bad file">
-                  <i class="fa fa-angle-left"></i> ros bad file
+                <a href="/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E9%95%9C%E5%83%8F%E6%BA%90%E8%AE%BE%E7%BD%AE/" rel="prev" title="镜像源设置">
+                  <i class="fa fa-angle-left"></i> 镜像源设置
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/03/22/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Updatedb%E6%8E%92%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9/" rel="next" title="Updatedb排除文件夹">
-                  Updatedb排除文件夹 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -458,7 +474,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a69c1eb9e34d3f4fb6cda40e60ca2b8e"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"926380f38c6726f9e3e01fa699196483"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

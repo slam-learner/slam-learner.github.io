@@ -249,19 +249,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Updatedb排除文件夹</title>
-    <url>/2024/03/22/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Updatedb%E6%8E%92%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
-    <content><![CDATA[<p><code>/etc/updatedb.conf</code></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">PRUNE_BIND_MOUNTS=&quot;yes&quot;</span><br><span class="line"># PRUNENAMES=&quot;.git .bzr .hg .svn&quot;</span><br><span class="line">PRUNEPATHS=&quot;/tmp /var/spool /media /var/lib/os-prober /var/lib/ceph /home/.ecryptfs /var/lib/schroot /mnt/c /mnt/d&quot;</span><br><span class="line">PRUNEFS=&quot;NFS nfs nfs4 rpc_pipefs afs binfmt_misc proc smbfs autofs iso9660 ncpfs coda devpts ftpfs devfs devtmpfs fuse.mfs shfs sysfs cifs lustre tmpfs usbfs udf fuse.glusterfs fuse.sshfs curlftpfs ceph fuse.ceph fuse.rozofs ecryptfs fusesmb&quot;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>Updatedb</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PicGo图床设置</title>
     <url>/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="图床的介绍"><a href="#图床的介绍" class="headerlink" title="图床的介绍"></a>图床的介绍</h2><p>图床在台湾叫做 <code>網路相簿</code>，实际上就是可以将图片存放在网络上。好处在于比如在 markdown 中插入图片，假如使用本地图片的方式，那么当博客的位置发生变更时图片将会失效。尽管可以通过相对路径的方式部分程度的进行解决，但是假如想要将 markdown 文件分享给别人，如果想要他获得相同的显示效果就必须把图片连同 markdown 文件一起分享出去。而使用图床就可以做到 markdown 的显示效果在各个地方都是相同的，并且减少空间占用。</p>
@@ -281,6 +268,64 @@
       <tags>
         <tag>PicGo</tag>
         <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Updatedb排除文件夹</title>
+    <url>/2024/03/22/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Updatedb%E6%8E%92%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
+    <content><![CDATA[<p><code>/etc/updatedb.conf</code></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">PRUNE_BIND_MOUNTS=&quot;yes&quot;</span><br><span class="line"># PRUNENAMES=&quot;.git .bzr .hg .svn&quot;</span><br><span class="line">PRUNEPATHS=&quot;/tmp /var/spool /media /var/lib/os-prober /var/lib/ceph /home/.ecryptfs /var/lib/schroot /mnt/c /mnt/d&quot;</span><br><span class="line">PRUNEFS=&quot;NFS nfs nfs4 rpc_pipefs afs binfmt_misc proc smbfs autofs iso9660 ncpfs coda devpts ftpfs devfs devtmpfs fuse.mfs shfs sysfs cifs lustre tmpfs usbfs udf fuse.glusterfs fuse.sshfs curlftpfs ceph fuse.ceph fuse.rozofs ecryptfs fusesmb&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Updatedb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WSL备份与迁移</title>
+    <url>/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/</url>
+    <content><![CDATA[<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>终止正在运行的 wsl</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+<p>ubuntu 名字用 wsl -l -v 查看，这里以导出到 G 盘下，命名为 Ubuntu_bak.tar 为例</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line">wsl --<span class="keyword">export</span> ubuntu-<span class="number">22.04</span> <span class="attr">G</span>:\<span class="title class_">Ubuntu</span>_bak.<span class="property">tar</span></span><br></pre></td></tr></table></figure>
+<h2 id="注销"><a href="#注销" class="headerlink" title="注销"></a>注销</h2><p>注销之前的 wsl</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --unregister ubuntu-22.04</span><br></pre></td></tr></table></figure>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --import ubuntu-22.04 G:\WSL_Ubuntu G:\Ubuntu_bak.tar --version 2</span><br></pre></td></tr></table></figure>
+<h2 id="升级-wsl-版本"><a href="#升级-wsl-版本" class="headerlink" title="升级 wsl 版本"></a>升级 wsl 版本</h2><p>如果之前的 wsl 版本为 wsl1，需要升级到 wsl2 的话，需要执行下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --set-version ubuntu-22.04 2</span><br></pre></td></tr></table></figure>
+<p>如果 powershell 中提示需要升级，那么需要执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+<p>设置默认 wsl 默认版本为 wsl2</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --set-default-version 2</span><br></pre></td></tr></table></figure>
+<p>查看安装版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl -l -v</span><br></pre></td></tr></table></figure>
+<p><strong>参数解读：</strong><br><em>Ubuntu-22.04</em><br>· 实例名称，可以自己设置，设置后即为第 2 步输入 wsl -l -v 后显示的名称；<br><em>G:\WSL_Ubuntu</em><br>· 导入后的镜像及其相关数据存放路径；<br><em>G:\wsl_nomatlab. Tar</em><br>· 导入的备份，即第 3 步通过 wsl —export 导出的文件；<br><em>–version 2</em><br>· WSL 版本为2</p>
+<p><strong>用户设置</strong><br>方法 1： 管理员身份运行 power shell, 执行 <code>ubuntu2004.exe config --default-user root</code> ,再在 power shell，执行以下命令，可以将 WSL2的默认系统设置为 Ubuntu-20.04。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wslconfig /setdefault Ubuntu-20.04</span><br></pre></td></tr></table></figure>
+<p>方法 2：修改 <code>/etc/wsl.conf</code> 文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Set the user when launching a distribution with WSL.</span></span><br><span class="line"></span><br><span class="line">[user]</span><br><span class="line">default=username</span><br></pre></td></tr></table></figure>
+<p>方法 3：在 windows terminal 中按下三角按钮打开设置, 并在命令行设置中进行修改， -d 参数修改发行版本，-u 修改用户。<br><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/202403271350893.png" alt="Windows Terminal设置"></p>
+<h2 id="压缩空间"><a href="#压缩空间" class="headerlink" title="压缩空间"></a>压缩空间</h2><p><code>WSL2</code> 本质上是虚拟机，所以 <code>Windows</code> 会自动创建 <code>vhdx</code> 后缀的虚拟磁盘文件作为存储。这个 <code>vhdx</code> 后缀的虚拟磁盘文件特点是可以自动扩容，但是一般不会自动缩容。一旦有很多文件把它“撑大”，即使把这些文件删除它也不会自动“缩小”。所以删除文件后还需要我们手动进行压缩才能释放磁盘空间。</p>
+<p>首先在 PowerShell 中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 关闭 wsl</span></span><br><span class="line">wsl <span class="literal">--shutdown</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行管理计算机驱动器的 DiskPart命令</span></span><br><span class="line">diskpart</span><br></pre></td></tr></table></figure>
+<p>在新打开的 <code>DiskPart</code> 命令窗口中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 选择虚拟磁盘文件</span></span><br><span class="line"><span class="built_in">select</span> vdisk file=<span class="string">&quot;D:\WSL\Ubuntu-18.04\ext4.vhdx&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">compact vdisk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩完毕后卸载磁盘（可能会有报错/警告，正常现象）</span></span><br><span class="line">detach vdisk</span><br></pre></td></tr></table></figure>
+<h2 id="需要开启或安装的功能-包"><a href="#需要开启或安装的功能-包" class="headerlink" title="需要开启或安装的功能/包"></a>需要开启或安装的功能/包</h2><p>直接按 win 键搜索 “启用或关闭 Windows 功能”即可找到选项卡，开启以下功能（不开启也可以正常使用，不清楚具体影响）。</p>
+<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/![[启用或关闭Windows功能选项卡.png]].png" alt="![[启用或关闭Windows功能选项卡.png]]"><br>商店中安装 Ubuntu 18.04 LTS</p>
+<p><img src="https://raw.githubusercontent.com/slam-learner/Figures/main/PicGo/![[18.04LTS商店安装.png]].png" alt="![[18.04LTS商店安装.png]]"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://www.jianshu.com/p/aeef20207355">修改默认登陆用户</a></li>
+<li><a href="https://blog.csdn.net/poena/article/details/106451847">WSL 使用与迁移</a></li>
+<li><a href="https://blog.csdn.net/m0_60634555/article/details/129699609">wsl 版本升级</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>WSL</tag>
       </tags>
   </entry>
   <entry>
@@ -307,6 +352,28 @@
       </tags>
   </entry>
   <entry>
+    <title>镜像源设置</title>
+    <url>/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E9%95%9C%E5%83%8F%E6%BA%90%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><h3 id="手动替换"><a href="#手动替换" class="headerlink" title="手动替换"></a>手动替换</h3><p><strong>原始：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/aaa/bbb.git</span><br></pre></td></tr></table></figure>
+<p><strong>替换后：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitclone.com/github.com/aaa/bbb.git</span><br></pre></td></tr></table></figure>
+<h3 id="使用命令进行全局替换"><a href="#使用命令进行全局替换" class="headerlink" title="使用命令进行全局替换"></a>使用命令进行全局替换</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global url.<span class="string">&quot;https://gitclone.com/&quot;</span>.insteadOf https://</span><br></pre></td></tr></table></figure>
+<p>全局参数更改之后，可以使用 <code>vim ~/.gitconfig</code> 命令查看当前的配置文件，可以看到以下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[url &quot;https://url you choose&quot;] </span><br><span class="line">        insteadOf = https://github.com/</span><br></pre></td></tr></table></figure>
+<p>对 url 内部的内容进行替换可以更换镜像源，以下是可能可以用的镜像源：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://github.com.cnpmjs.org</span><br><span class="line"># 服务器位于香港</span><br><span class="line"></span><br><span class="line">https://gitclone.com</span><br><span class="line"># 服务器位于杭州</span><br><span class="line"></span><br><span class="line">https://doc.fastgit.org</span><br><span class="line"># 服务器位于香港</span><br></pre></td></tr></table></figure>
+<p>一般使用 <code>https://gitclone.com</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>镜像源设置</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ros bad file</title>
     <url>/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在WSL的一个ROS工作空间对项目进行编译的时候出现了以下错误信息提示：</p>
@@ -320,9 +387,9 @@
         <category>问题解决</category>
       </categories>
       <tags>
+        <tag>WSL</tag>
         <tag>问题解决</tag>
         <tag>ROS</tag>
-        <tag>WSL</tag>
       </tags>
   </entry>
 </search>
