@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"slam-learner.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":200},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="参考资料 1参考资料 2 介绍LSP如果想要了解clang 首先要明白 LSP（Language Server Protocol）：语言服务协议。 传统的 IDE，即使离线使用时也能完成语法检查、自动补全、跳转位置、引用、查找等功能。因为这些 IDE 的语法特性检查功能都是在本地实现的。不仅如此，各家 IDE 都有各家的实现。比如以 Java IDE 为例，对于 Java 的语法特性检查，Inte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="clang">
+<meta property="og:url" content="https://slam-learner.github.io/2024/04/01/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/clang/index.html">
+<meta property="og:site_name" content="ydxの博客">
+<meta property="og:description" content="参考资料 1参考资料 2 介绍LSP如果想要了解clang 首先要明白 LSP（Language Server Protocol）：语言服务协议。 传统的 IDE，即使离线使用时也能完成语法检查、自动补全、跳转位置、引用、查找等功能。因为这些 IDE 的语法特性检查功能都是在本地实现的。不仅如此，各家 IDE 都有各家的实现。比如以 Java IDE 为例，对于 Java 的语法特性检查，Inte">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-01T05:40:07.000Z">
+<meta property="article:modified_time" content="2024-04-09T06:10:34.209Z">
+<meta property="article:author" content="ydx">
+<meta property="article:tag" content="clang">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://slam-learner.github.io/2024/04/01/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/clang/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/04/01/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/clang/","path":"2024/04/01/环境配置/clang/","title":"clang"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>clang | ydxの博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ydxの博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个普普通通的帅比罢了</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSP"><span class="nav-number">1.1.</span> <span class="nav-text">LSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LLVM-%E4%B8%8E-Clang"><span class="nav-number">1.2.</span> <span class="nav-text">LLVM 与 Clang</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LLVM"><span class="nav-number">1.2.1.</span> <span class="nav-text">LLVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clang"><span class="nav-number">1.2.2.</span> <span class="nav-text">Clang</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clang-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">Clang 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-Vs-Code-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">在 Vs Code 中的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%94%A8%E6%88%B7-json-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.1.</span> <span class="nav-text">在用户 json 中的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#launch-json"><span class="nav-number">2.1.2.</span> <span class="nav-text">launch. json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tasks-json"><span class="nav-number">2.1.3.</span> <span class="nav-text">tasks. json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-cpp-properties-json"><span class="nav-number">2.1.4.</span> <span class="nav-text">c_cpp_properties. json</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ydx"
+      src="/images/avatar2.gif">
+  <p class="site-author-name" itemprop="name">ydx</p>
+  <div class="site-description" itemprop="description">江苏大学 | 车辆工程 | SLAM</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/slam-learner" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;slam-learner" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ydx199997@gmail.com" title="E-Mail → mailto:ydx199997@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/04/01/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/clang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.gif">
+      <meta itemprop="name" content="ydx">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ydxの博客">
+      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="clang | ydxの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          clang
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-01 13:40:07" itemprop="dateCreated datePublished" datetime="2024-04-01T13:40:07+08:00">2024-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/551978555">参考资料 1</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/445300679">参考资料 2</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="LSP"><a href="#LSP" class="headerlink" title="LSP"></a>LSP</h3><p>如果想要了解clang 首先要明白 LSP（Language Server Protocol）：语言服务协议。</p>
+<p>传统的 IDE，即使离线使用时也能完成语法检查、自动补全、跳转位置、引用、查找等功能。因为这些 IDE 的语法特性检查功能都是在本地实现的。不仅如此，各家 IDE 都有各家的实现。比如以 Java IDE 为例，对于 Java 的语法特性检查，IntelliJ IDEA 有其自己的实现方式，Eclipse 也有其自己的实现方式。这就造成了对于同一种编程语言的语法解析需要针对不同的 IDE 进行不同的适配。其次，语言扫描相关的工作都比较占用 CPU 资源，运行在 vscode 进程中不如单独放在一个独立进程，甚至远程服务器上更好。</p>
+<p>由于各种新技术新语言层出不穷，VSCode 开发人员不可能对任何一种编程语言的语法都了如指掌，专业领域的编程语言的语法解析，由编程语言的开发者来实现是最好的。</p>
+<p>LSP(Language Server Protocol) 语言服务协议，此协议定义了在编辑器与语言服务器之间使用的协议。</p>
+<p>通过LSP使得编程语言社区能专注于不断完善一个能提供语法检查、自动补全、跳转位置、引用查找等语言特性检查的高性能 “语言服务器” 实现。与此同时，IDE厂商和组织只专注于提供能与任何 “语言服务器” 交互和 “渲染” 响应的实现方案。</p>
+<h3 id="LLVM-与-Clang"><a href="#LLVM-与-Clang" class="headerlink" title="LLVM 与 Clang"></a>LLVM 与 Clang</h3><p>简单来说，LLVM 是编译器后端，Clang 是编译器前端。</p>
+<h4 id="LLVM"><a href="#LLVM" class="headerlink" title="LLVM"></a>LLVM</h4><p>LLVM（Low Level Virtual Machine）。LLVM 是以 BSD 许可来开发的开源的编译器框架系统，基于 C++ 编写而成，利用虚拟技术来优化以任意程序语言编写的程序的编译时间、链接时间、运行时间以及空闲时间，最早以 C/C++ 为实现对象，对开发者保持开放，并兼容已有脚本。</p>
+<p>目前 LLVM 因其宽松的许可协议，更好的模块化、更清晰的架构，成为很多厂商或者组织的选择，已经被苹果 IOS 开发工具、Facebook、Google 等各大公司采用，像 Swift、Rust 等语言都选择了以 LLVM 为后端。</p>
+<p>大多数编译器由两部分组成：前端和后端。</p>
+<ul>
+<li>前端负责语法分析，生成中间代码；</li>
+<li>后端以中间代码作为输入，进行架构无关的代码优化，接着针对不同架构生成不同的机器码。</li>
+</ul>
+<p>这种架构使得前后端依赖统一格式的中间代码(IR)，使得前后端可以独立的变化。新增一门语言只需要修改前端，而新增一个CPU架构只需要修改后端即可。</p>
+<p>  Objective C/C/C++使用的编译器前端是Clang，Swift使用的是Swift，后端都是LLVM。</p>
+<h4 id="Clang"><a href="#Clang" class="headerlink" title="Clang"></a>Clang</h4><p>在 LibTooling 的基础之上有个开发人员工具合集Clang tools。Clang Tools是为 C++ 开发人员设计的独立命令行（可能还有GUI）工具。目前只有几个最基础和最根本的的工具保存在主 Clang目录树中，其余的工具保存在一个单独的目录树中称为Extra Clang Tools；</p>
+<p>Clang的Extra Clang Tools中有一个工具是<strong>Clangd</strong>。它是对LSP协议的一个具体实现（当然是建立在Clang的基础之上的），目的是为了<strong>给C/C++的编辑器提供编程语言的一些智能化的特性</strong>，比如代码分析、引用查找等。</p>
+<p>  <strong>LLDB</strong>（Low-Level Debugger）则是一种开源的<strong>调试器</strong>，最初是作为 LLVM 项目的一部分而开发的。它设计用于支持多种编程语言，包括 C, C++, Objective-C, 和 Swift。</p>
+<h2 id="Clang-的安装"><a href="#Clang-的安装" class="headerlink" title="Clang 的安装"></a>Clang 的安装</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_34986308/article/details/116116780">参考博客</a><br>在 Ubuntu18.04 中安装 Clang-12 以上版本的话需要新增软件源，按照以下步骤进行：</p>
+<p>1.获取key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+<p>2.在 <code>/etc/apt/sources.list</code> 中添加下列文本:（如果不是18.04，需要把bionic替换为对应的版本，可以通过 <code>lsb_release -a</code> 查看）</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main</span><br><span class="line">deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main</span><br><span class="line"># 11</span><br><span class="line">deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main</span><br><span class="line">deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main</span><br><span class="line"># 12</span><br><span class="line">deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main</span><br><span class="line">deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main</span><br></pre></td></tr></table></figure>
+<p>3.安装相关软件包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install clang-12 clangd-12 llvm-12 llvm-12-dev liblldb-12 liblldb-12-dev clang-format-12 bear clang-tidy-12</span><br></pre></td></tr></table></figure>
+<p>4.使用 update-alternative 来设置设置默认命令使用 12 版本提供的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 100</span><br><span class="line">sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100</span><br><span class="line">sudo update-alternatives --install /usr/bin/lldb lldb /usr/bin/lldb-12 100</span><br></pre></td></tr></table></figure>
+<h3 id="在-Vs-Code-中的配置"><a href="#在-Vs-Code-中的配置" class="headerlink" title="在 Vs Code 中的配置"></a>在 Vs Code 中的配置</h3><p>必装： 1. clangd 2. CodeLLDB</p>
+<p>选装： 3. CMake 4. CMake Tools 5. Clang-Format 6.  Code Runner</p>
+<h4 id="在用户-json-中的配置"><a href="#在用户-json-中的配置" class="headerlink" title="在用户 json 中的配置"></a>在用户 json 中的配置</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// code runner</span></span><br><span class="line">    <span class="attr">&quot;code-runner.runInTerminal&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;code-runner.saveFileBeforeRun&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// run code前保存</span></span><br><span class="line">    <span class="attr">&quot;code-runner.clearPreviousOutput&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// 每次run code前清空属于code runner的终端消息，默认false</span></span><br><span class="line">    <span class="attr">&quot;clangd.arguments&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;--compile-commands-dir=$&#123;workspaceFolder&#125;/build&quot;</span><span class="punctuation">,</span><span class="comment">//指定配置文件compelie_commands.json所在目录，这里有三种方法生成</span></span><br><span class="line">        <span class="comment">// 在后台自动分析文件（基于complie_commands)</span></span><br><span class="line">        <span class="string">&quot;--background-index&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 同时开启的任务数量</span></span><br><span class="line">        <span class="string">&quot;-j=12&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// &quot;--folding-ranges&quot;</span></span><br><span class="line">        <span class="comment">// 告诉clangd用那个clang进行编译，路径参考which clang++的路径</span></span><br><span class="line">        <span class="string">&quot;--query-driver=/usr/bin/clang++&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// clang-tidy功能</span></span><br><span class="line">        <span class="string">&quot;--clang-tidy&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;--clang-tidy-checks=performance-*,bugprone-*&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 全局补全（会自动补充头文件）</span></span><br><span class="line">        <span class="string">&quot;--all-scopes-completion&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 更详细的补全内容</span></span><br><span class="line">        <span class="string">&quot;--completion-style=detailed&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;--function-arg-placeholders&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 补充头文件的形式</span></span><br><span class="line">        <span class="string">&quot;--header-insertion=iwyu&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// pch优化的位置</span></span><br><span class="line">        <span class="string">&quot;--pch-storage=memory&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>生成 clangd 配置文件</p>
+<p>1.在 CMakeLists.txt 文件中添加 set(CMAKE_EXPORT_COMPILECOMMANDS ON) 运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p build</span><br><span class="line"><span class="built_in">cd</span> build &amp;&amp; cmake ..</span><br></pre></td></tr></table></figure>
+<p>可以发现在 build目录下已经生成了 compile_commands.json文件</p>
+<p>2.make 或其他项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install bear</span><br><span class="line">bear make</span><br></pre></td></tr></table></figure>
+<h4 id="launch-json"><a href="#launch-json" class="headerlink" title="launch. json"></a>launch. json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;DomiMonoDebug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lldb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/your-exe-path&quot;</span><span class="punctuation">,</span> <span class="comment">// 可执行文件路径</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;arg1&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;arg2&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span> <span class="comment">// 命令行参数</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build_debug&quot;</span> <span class="comment">// 预构建任务名称</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="tasks-json"><a href="#tasks-json" class="headerlink" title="tasks. json"></a>tasks. json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build_debug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bash&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-c&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;cd build_debug &amp;&amp; cmake -DCMAKE_BUILD_TYPE=DEBUG .. &amp;&amp; make -j4&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;presentation&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;echo&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;reveal&quot;</span><span class="punctuation">:</span> <span class="string">&quot;always&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;focus&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;panel&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shared&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="c-cpp-properties-json"><a href="#c-cpp-properties-json" class="headerlink" title="c_cpp_properties. json"></a>c_cpp_properties. json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Linux&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/include/**&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;/usr/include/**&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;/usr/local/include/**&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;defines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/usr/bin/clang&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c11&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c++17&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gcc-x64&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;compileCommands&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build/compile_commands.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;configurationProvider&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ms-vscode.cmake-tools&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">4</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>有一篇<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/579294471">知乎文章</a> 中提到：</p>
+<blockquote>
+<p>lldb 不自带 lldb-mi，但在 VSCode 进行调试时需要，所以要自己生成一下</p>
+</blockquote>
+<p>需要进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install liblldb-dev</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/lldb-tools/lldb-mi.git</span><br><span class="line"><span class="built_in">cd</span> lldb-mi</span><br><span class="line">cmake .</span><br><span class="line">cmake --build .</span><br><span class="line">sudo <span class="built_in">cp</span> src/lldb-mi /usr/bin/</span><br></pre></td></tr></table></figure>
+<p>其中编译会报错，按照提示，找到报错位置，注释掉相应的代码即可，但是可能不需要这个步骤也可以成功完成调试。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="ydx 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="ydx 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/clang/" rel="tag"><i class="fa fa-tag"></i> clang</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/27/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB/" rel="prev" title="WSL备份与迁移">
+                  <i class="fa fa-angle-left"></i> WSL备份与迁移
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ydx</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">7k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/slam-learner" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"e8c55ea9c179a6f99755157a10d513ad"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

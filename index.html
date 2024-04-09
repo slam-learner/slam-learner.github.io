@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -165,7 +165,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -190,6 +190,151 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/04/01/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/clang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.gif">
+      <meta itemprop="name" content="ydx">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ydxの博客">
+      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ydxの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/01/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/clang/" class="post-title-link" itemprop="url">clang</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-01 13:40:07" itemprop="dateCreated datePublished" datetime="2024-04-01T13:40:07+08:00">2024-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/551978555">参考资料 1</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/445300679">参考资料 2</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="LSP"><a href="#LSP" class="headerlink" title="LSP"></a>LSP</h3><p>如果想要了解clang 首先要明白 LSP（Language Server Protocol）：语言服务协议。</p>
+<p>传统的 IDE，即使离线使用时也能完成语法检查、自动补全、跳转位置、引用、查找等功能。因为这些 IDE 的语法特性检查功能都是在本地实现的。不仅如此，各家 IDE 都有各家的实现。比如以 Java IDE 为例，对于 Java 的语法特性检查，IntelliJ IDEA 有其自己的实现方式，Eclipse 也有其自己的实现方式。这就造成了对于同一种编程语言的语法解析需要针对不同的 IDE 进行不同的适配。其次，语言扫描相关的工作都比较占用 CPU 资源，运行在 vscode 进程中不如单独放在一个独立进程，甚至远程服务器上更好。</p>
+<p>由于各种新技术新语言层出不穷，VSCode 开发人员不可能对任何一种编程语言的语法都了如指掌，专业领域的编程语言的语法解析，由编程语言的开发者来实现是最好的。</p>
+<p>LSP(Language Server Protocol) 语言服务协议，此协议定义了在编辑器与语言服务器之间使用的协议。</p>
+<p>通过LSP使得编程语言社区能专注于不断完善一个能提供语法检查、自动补全、跳转位置、引用查找等语言特性检查的高性能 “语言服务器” 实现。与此同时，IDE厂商和组织只专注于提供能与任何 “语言服务器” 交互和 “渲染” 响应的实现方案。</p>
+<h3 id="LLVM-与-Clang"><a href="#LLVM-与-Clang" class="headerlink" title="LLVM 与 Clang"></a>LLVM 与 Clang</h3><p>简单来说，LLVM 是编译器后端，Clang 是编译器前端。</p>
+<h4 id="LLVM"><a href="#LLVM" class="headerlink" title="LLVM"></a>LLVM</h4><p>LLVM（Low Level Virtual Machine）。LLVM 是以 BSD 许可来开发的开源的编译器框架系统，基于 C++ 编写而成，利用虚拟技术来优化以任意程序语言编写的程序的编译时间、链接时间、运行时间以及空闲时间，最早以 C/C++ 为实现对象，对开发者保持开放，并兼容已有脚本。</p>
+<p>目前 LLVM 因其宽松的许可协议，更好的模块化、更清晰的架构，成为很多厂商或者组织的选择，已经被苹果 IOS 开发工具、Facebook、Google 等各大公司采用，像 Swift、Rust 等语言都选择了以 LLVM 为后端。</p>
+<p>大多数编译器由两部分组成：前端和后端。</p>
+<ul>
+<li>前端负责语法分析，生成中间代码；</li>
+<li>后端以中间代码作为输入，进行架构无关的代码优化，接着针对不同架构生成不同的机器码。</li>
+</ul>
+<p>这种架构使得前后端依赖统一格式的中间代码(IR)，使得前后端可以独立的变化。新增一门语言只需要修改前端，而新增一个CPU架构只需要修改后端即可。</p>
+<p>  Objective C/C/C++使用的编译器前端是Clang，Swift使用的是Swift，后端都是LLVM。</p>
+<h4 id="Clang"><a href="#Clang" class="headerlink" title="Clang"></a>Clang</h4><p>在 LibTooling 的基础之上有个开发人员工具合集Clang tools。Clang Tools是为 C++ 开发人员设计的独立命令行（可能还有GUI）工具。目前只有几个最基础和最根本的的工具保存在主 Clang目录树中，其余的工具保存在一个单独的目录树中称为Extra Clang Tools；</p>
+<p>Clang的Extra Clang Tools中有一个工具是<strong>Clangd</strong>。它是对LSP协议的一个具体实现（当然是建立在Clang的基础之上的），目的是为了<strong>给C/C++的编辑器提供编程语言的一些智能化的特性</strong>，比如代码分析、引用查找等。</p>
+<p>  <strong>LLDB</strong>（Low-Level Debugger）则是一种开源的<strong>调试器</strong>，最初是作为 LLVM 项目的一部分而开发的。它设计用于支持多种编程语言，包括 C, C++, Objective-C, 和 Swift。</p>
+<h2 id="Clang-的安装"><a href="#Clang-的安装" class="headerlink" title="Clang 的安装"></a>Clang 的安装</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_34986308/article/details/116116780">参考博客</a><br>在 Ubuntu18.04 中安装 Clang-12 以上版本的话需要新增软件源，按照以下步骤进行：</p>
+<p>1.获取key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+<p>2.在 <code>/etc/apt/sources.list</code> 中添加下列文本:（如果不是18.04，需要把bionic替换为对应的版本，可以通过 <code>lsb_release -a</code> 查看）</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main</span><br><span class="line">deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main</span><br><span class="line"># 11</span><br><span class="line">deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main</span><br><span class="line">deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main</span><br><span class="line"># 12</span><br><span class="line">deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main</span><br><span class="line">deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main</span><br></pre></td></tr></table></figure>
+<p>3.安装相关软件包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install clang-12 clangd-12 llvm-12 llvm-12-dev liblldb-12 liblldb-12-dev clang-format-12 bear clang-tidy-12</span><br></pre></td></tr></table></figure>
+<p>4.使用 update-alternative 来设置设置默认命令使用 12 版本提供的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 100</span><br><span class="line">sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100</span><br><span class="line">sudo update-alternatives --install /usr/bin/lldb lldb /usr/bin/lldb-12 100</span><br></pre></td></tr></table></figure>
+<h3 id="在-Vs-Code-中的配置"><a href="#在-Vs-Code-中的配置" class="headerlink" title="在 Vs Code 中的配置"></a>在 Vs Code 中的配置</h3><p>必装： 1. clangd 2. CodeLLDB</p>
+<p>选装： 3. CMake 4. CMake Tools 5. Clang-Format 6.  Code Runner</p>
+<h4 id="在用户-json-中的配置"><a href="#在用户-json-中的配置" class="headerlink" title="在用户 json 中的配置"></a>在用户 json 中的配置</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// code runner</span></span><br><span class="line">    <span class="attr">&quot;code-runner.runInTerminal&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;code-runner.saveFileBeforeRun&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// run code前保存</span></span><br><span class="line">    <span class="attr">&quot;code-runner.clearPreviousOutput&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// 每次run code前清空属于code runner的终端消息，默认false</span></span><br><span class="line">    <span class="attr">&quot;clangd.arguments&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;--compile-commands-dir=$&#123;workspaceFolder&#125;/build&quot;</span><span class="punctuation">,</span><span class="comment">//指定配置文件compelie_commands.json所在目录，这里有三种方法生成</span></span><br><span class="line">        <span class="comment">// 在后台自动分析文件（基于complie_commands)</span></span><br><span class="line">        <span class="string">&quot;--background-index&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 同时开启的任务数量</span></span><br><span class="line">        <span class="string">&quot;-j=12&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// &quot;--folding-ranges&quot;</span></span><br><span class="line">        <span class="comment">// 告诉clangd用那个clang进行编译，路径参考which clang++的路径</span></span><br><span class="line">        <span class="string">&quot;--query-driver=/usr/bin/clang++&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// clang-tidy功能</span></span><br><span class="line">        <span class="string">&quot;--clang-tidy&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;--clang-tidy-checks=performance-*,bugprone-*&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 全局补全（会自动补充头文件）</span></span><br><span class="line">        <span class="string">&quot;--all-scopes-completion&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 更详细的补全内容</span></span><br><span class="line">        <span class="string">&quot;--completion-style=detailed&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;--function-arg-placeholders&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// 补充头文件的形式</span></span><br><span class="line">        <span class="string">&quot;--header-insertion=iwyu&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// pch优化的位置</span></span><br><span class="line">        <span class="string">&quot;--pch-storage=memory&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>生成 clangd 配置文件</p>
+<p>1.在 CMakeLists.txt 文件中添加 set(CMAKE_EXPORT_COMPILECOMMANDS ON) 运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p build</span><br><span class="line"><span class="built_in">cd</span> build &amp;&amp; cmake ..</span><br></pre></td></tr></table></figure>
+<p>可以发现在 build目录下已经生成了 compile_commands.json文件</p>
+<p>2.make 或其他项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install bear</span><br><span class="line">bear make</span><br></pre></td></tr></table></figure>
+<h4 id="launch-json"><a href="#launch-json" class="headerlink" title="launch. json"></a>launch. json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;DomiMonoDebug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lldb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/your-exe-path&quot;</span><span class="punctuation">,</span> <span class="comment">// 可执行文件路径</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;arg1&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;arg2&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span> <span class="comment">// 命令行参数</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build_debug&quot;</span> <span class="comment">// 预构建任务名称</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="tasks-json"><a href="#tasks-json" class="headerlink" title="tasks. json"></a>tasks. json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build_debug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bash&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-c&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;cd build_debug &amp;&amp; cmake -DCMAKE_BUILD_TYPE=DEBUG .. &amp;&amp; make -j4&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;presentation&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;echo&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;reveal&quot;</span><span class="punctuation">:</span> <span class="string">&quot;always&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;focus&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;panel&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shared&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="c-cpp-properties-json"><a href="#c-cpp-properties-json" class="headerlink" title="c_cpp_properties. json"></a>c_cpp_properties. json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Linux&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/include/**&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;/usr/include/**&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;/usr/local/include/**&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;defines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/usr/bin/clang&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c11&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c++17&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gcc-x64&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;compileCommands&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build/compile_commands.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;configurationProvider&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ms-vscode.cmake-tools&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">4</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>有一篇<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/579294471">知乎文章</a> 中提到：</p>
+<blockquote>
+<p>lldb 不自带 lldb-mi，但在 VSCode 进行调试时需要，所以要自己生成一下</p>
+</blockquote>
+<p>需要进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install liblldb-dev</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/lldb-tools/lldb-mi.git</span><br><span class="line"><span class="built_in">cd</span> lldb-mi</span><br><span class="line">cmake .</span><br><span class="line">cmake --build .</span><br><span class="line">sudo <span class="built_in">cp</span> src/lldb-mi /usr/bin/</span><br></pre></td></tr></table></figure>
+<p>其中编译会报错，按照提示，找到报错位置，注释掉相应的代码即可，但是可能不需要这个步骤也可以成功完成调试。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -227,9 +372,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-03-27 13:40:07 / 修改时间：13:54:26" itemprop="dateCreated datePublished" datetime="2024-03-27T13:40:07+08:00">2024-03-27</time>
+      <time title="创建时间：2024-03-27 13:40:07" itemprop="dateCreated datePublished" datetime="2024-03-27T13:40:07+08:00">2024-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -353,9 +504,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-03-27 13:36:07 / 修改时间：13:54:26" itemprop="dateCreated datePublished" datetime="2024-03-27T13:36:07+08:00">2024-03-27</time>
+      <time title="创建时间：2024-03-27 13:36:07" itemprop="dateCreated datePublished" datetime="2024-03-27T13:36:07+08:00">2024-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -463,7 +620,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -563,7 +720,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -672,7 +829,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -776,7 +933,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -880,7 +1037,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -987,7 +1144,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1093,7 +1250,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
+      <time title="修改时间：2024-04-09 14:10:34" itemprop="dateModified" datetime="2024-04-09T14:10:34+08:00">2024-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1155,112 +1312,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">CMakeLists模板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-02-06 17:09:04" itemprop="dateCreated datePublished" datetime="2024-02-06T17:09:04+08:00">2024-02-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-27 13:54:26" itemprop="dateModified" datetime="2024-03-27T13:54:26+08:00">2024-03-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%A8%A1%E6%9D%BF/" itemprop="url" rel="index"><span itemprop="name">模板</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>38</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="CMakeLists模板"><a href="#CMakeLists模板" class="headerlink" title="CMakeLists模板"></a>CMakeLists模板</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/06/%E6%A8%A1%E6%9D%BF/CMakeLists%E6%A8%A1%E6%9D%BF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1284,13 +1335,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">7k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
