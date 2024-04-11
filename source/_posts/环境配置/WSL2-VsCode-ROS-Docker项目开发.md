@@ -13,7 +13,7 @@ categories:
 
 在 Windows 系统上使用 WSL2 + VS Code + ROS + Docker 进行项目开发。
 
-WSL2 + VS Code是此前一直使用的开发方式，只要使用VS Code的WSL插件，就可以在WSL2中进行开发，而不用在Windows系统中安装编译器和调试器。在一般的C++项目开发中，运行调试项目可以通过设置.vscode/launch.json，.vscode/tasks.json，.vscode/c_cpp_properties.json等文件来实现。但是在开发ROS项目时，需要在VSC中安装ROS插件，这样才能在VSC中运行ROS项目。并且使用ROS插件提供的设置来运行ROS项目。这个插件有一些bug，有时会出现一些奇怪的问题。另外，在运行ros_motion_planning项目时，在ubuntu-18.04下始终无法编译通过，而在ubuntu-20.04下运行还需要设置很多东西，恰巧该项目提供了dockerfile，因此使用 WSL2 + VS Code + ROS + Docker 进行项目开发。这里对于遇到的问题及解决方案进行记录。有一些具有很多教程的步骤，在这里不再赘述。比如安装WSL2，安装VS Code，安装ROS，Windows下安装docker并使用WSL2作为后端引擎等。
+WSL2 + VS Code是此前一直使用的开发方式，只要使用VS Code的WSL插件，就可以在WSL2中进行开发，而不用在Windows系统中安装编译器和调试器。在一般的C++项目开发中，运行调试项目可以通过设置`.vscode/launch.jso`n，`.vscode/tasks.json`，`.vscode/c_cpp_properties.json`等文件来实现。但是在开发ROS项目时，需要在VSC中安装ROS插件，这样才能在VSC中运行ROS项目。并且使用ROS插件提供的设置来运行ROS项目。这个插件有一些bug，有时会出现一些奇怪的问题。另外，在运行`ros_motion_planning`项目时，在`ubuntu-18.04`下始终无法编译通过，而在`ubuntu-20.04`下运行还需要设置很多东西，恰巧该项目提供了`dockerfile`，因此使用 WSL2 + VS Code + ROS + Docker 进行项目开发。这里对于遇到的问题及解决方案进行记录。有一些具有很多教程的步骤，在这里不再赘述。比如安装WSL2，安装VS Code，安装ROS，Windows下安装docker并使用WSL2作为后端引擎等。
 
 ## docker的基本命令
   
@@ -288,7 +288,7 @@ RUN /project/scripts/install_osqp.sh
 27.52 make[1]: *** Waiting for unfinished jobs....
 ```
 
-尝试将`OSQP`和`OsqpEigen`的源文件复制到`/usr/local/include`目录下，但是似乎没有作用，因此放弃了这种方式，而是直接在`dockerfile`中将`OSQP`的include路径添加到了环境变量中，此后构建成狗，完整的修改后的`dockerfile`如下：
+尝试将`OSQP`和`OsqpEigen`的源文件复制到`/usr/local/include`目录下，但是似乎没有作用，因此放弃了这种方式，而是直接在`dockerfile`中将`OSQP`的include路径添加到了环境变量中，此后构建成功，完整的修改后的`dockerfile`如下：
 
 ```dockerfile
 # Use the official ROS Noetic base image
