@@ -21,26 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"slam-learner.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":200},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="江苏大学 | 车辆工程 | SLAM">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ydxの博客">
-<meta property="og:url" content="https://slam-learner.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
+    <meta name="description" content="参考资料 Apollo官方文档-源码安装说明 Apollo官方社区文章-40系列显卡新镜像支持 Apollo Github Issue-14821 使用4090显卡编译报错 Apollo Github Issue-14478 Fail to build apollo in WSL2 ( error code: 14, error message: ‘Socket closed’) Apollo G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WSL2运行Apollo9.0">
+<meta property="og:url" content="https://slam-learner.github.io/2024/04/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2%E8%BF%90%E8%A1%8CApollo9.0/index.html">
 <meta property="og:site_name" content="ydxの博客">
-<meta property="og:description" content="江苏大学 | 车辆工程 | SLAM">
+<meta property="og:description" content="参考资料 Apollo官方文档-源码安装说明 Apollo官方社区文章-40系列显卡新镜像支持 Apollo Github Issue-14821 使用4090显卡编译报错 Apollo Github Issue-14478 Fail to build apollo in WSL2 ( error code: 14, error message: ‘Socket closed’) Apollo G">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-12T08:59:11.000Z">
+<meta property="article:modified_time" content="2024-04-12T11:57:45.058Z">
 <meta property="article:author" content="ydx">
-<meta property="article:tag" content="VSLAM IMU LIDAR GNSS INSS">
+<meta property="article:tag" content="WSL2">
+<meta property="article:tag" content="Apollo">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://slam-learner.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
+<link rel="canonical" href="https://slam-learner.github.io/2024/04/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2%E8%BF%90%E8%A1%8CApollo9.0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/问题解决/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://slam-learner.github.io/2024/04/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2%E8%BF%90%E8%A1%8CApollo9.0/","path":"2024/04/12/环境配置/WSL2运行Apollo9.0/","title":"WSL2运行Apollo9.0"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: 问题解决 | ydxの博客</title>
+<title>WSL2运行Apollo9.0 | ydxの博客</title>
   
 
 
@@ -127,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -140,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BF%AE%E6%94%B9dev-start-sh%E8%84%9A%E6%9C%AC"><span class="nav-number">2.1.</span> <span class="nav-text">1. 修改dev_start.sh脚本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bdocker-%E9%95%9C%E5%83%8Fid"><span class="nav-number"></span> <span class="nav-text">查看docker 镜像id</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="nav-number"></span> <span class="nav-text">进入容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F%E5%86%85NVIDIA%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="nav-number"></span> <span class="nav-text">删除镜像内NVIDIA相关文件</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -189,51 +193,161 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">问题解决
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/04/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2%E8%BF%90%E8%A1%8CApollo9.0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.gif">
+      <meta itemprop="name" content="ydx">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ydxの博客">
+      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="WSL2运行Apollo9.0 | ydxの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WSL2运行Apollo9.0
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+
+      <time title="创建时间：2024-04-12 16:59:11 / 修改时间：19:57:45" itemprop="dateCreated datePublished" datetime="2024-04-12T16:59:11+08:00">2024-04-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>328</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://apollo.baidu.com/docs/apollo/9.0/md_docs_2_xE5_xAE_x89_xE8_xA3_x85_xE6_x8C_x87_xE5_x8D_x97_2_xE6_xBA_x90_xE7_xA0_x81_xE5_xAE_x89_c6622abe953930b2197ae66df0a51dcd.html">Apollo官方文档-源码安装说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://apollo.baidu.com/community/article/1212">Apollo官方社区文章-40系列显卡新镜像支持</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ApolloAuto/apollo/issues/14821">Apollo Github Issue-14821 使用4090显卡编译报错</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ApolloAuto/apollo/issues/14478">Apollo Github Issue-14478 Fail to build apollo in WSL2 ( error code: 14, error message: ‘Socket closed’)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/nvidia-container-toolkit/issues/289">Apollo Github Issue-289 WSL2: nvidia-container-cli mount error, libnvidia-ml.so.1: file exists: unknown</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ApolloAuto/apollo/issues/15246">Apollo Github Issue-15246 dev_start进不去
+</a></li>
+</ol>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>首先根据官方文档安装好依赖，然后下载<code>Apollo v9.0.0</code>源码，解压后进入<code>apollo</code>目录。</p>
+<h3 id="1-修改dev-start-sh脚本"><a href="#1-修改dev-start-sh脚本" class="headerlink" title="1. 修改dev_start.sh脚本"></a>1. 修改<code>dev_start.sh</code>脚本</h3><p>Apollo默认镜像对于40系列显卡不支持，根据参考资料2，需要修改<code>docker/scripts/dev_start.sh</code>中的<code>VERSION_X86_64</code>镜像版本:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VERSION_X86_64=&quot;dev-x86_64-18.04-20231128_2222&quot;</span><br></pre></td></tr></table></figure>
+<p>按照参考资料2中的步骤说明，下一步直接执行<code>./docker/scripts/dev_start.sh</code>进行镜像构建即可，但在<code>WSL2</code>下构建会出现以下问题：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-container-cli mount error, libnvidia-ml.so.1: file exists: unknown.</span><br></pre></td></tr></table></figure>
+<p>实际上镜像已经成功生成，只是在执行容器时出现错误，根据参考资料5和参考资料6，首先将<code>dev_start.sh</code>中的容器执行命令注释掉。</p>
+<p>然后按照以下步骤进行操作：</p>
+<p>```bash</p>
+<h1 id="查看docker-镜像id"><a href="#查看docker-镜像id" class="headerlink" title="查看docker 镜像id"></a>查看docker 镜像id</h1><p>docker images</p>
+<h1 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h1><p>sudo docker run -it —rm <Apollo的镜像ID></p>
+<h1 id="删除镜像内NVIDIA相关文件"><a href="#删除镜像内NVIDIA相关文件" class="headerlink" title="删除镜像内NVIDIA相关文件"></a>删除镜像内NVIDIA相关文件</h1><p>rm /usr/lib/x86_64-linux-gnu/libnvidia-<em><br>rm /usr/lib/x86_64-linux-gnu/libcuda.so</em><br>rm /usr/lib/x86_64-linux-gnu/libnvcuvid.so.*</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-03-13T15:06:04+08:00"
-              content="2024-03-13">
-          03-13
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="ydx 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="ydx 支付宝">
+        <span>支付宝</span>
       </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2024/03/13/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ros%20bad%20file/" itemprop="url">
-          <span itemprop="name">ros bad file</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/WSL2/" rel="tag"><i class="fa fa-tag"></i> WSL2</a>
+              <a href="/tags/Apollo/" rel="tag"><i class="fa fa-tag"></i> Apollo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/09/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2-VsCode-ROS-Docker%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="prev" title="WSL2-VsCode-ROS-Docker项目开发">
+                  <i class="fa fa-angle-left"></i> WSL2-VsCode-ROS-Docker项目开发
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -344,7 +458,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"13d1183db9a68d7d6301c3516ea481ff"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"slam-learner","repo":"RepoForBlogComment","client_id":"f732afefb5f22b42282a","client_secret":"c8993c751222209026810c1812c7e5f127464761","admin_user":"slam-learner","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":["zh-CN"],"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"2cfafd8a8a22b9b6c1d32fa118bbcae1"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

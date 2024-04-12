@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -165,7 +165,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -190,6 +190,118 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/04/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2%E8%BF%90%E8%A1%8CApollo9.0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar2.gif">
+      <meta itemprop="name" content="ydx">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ydxの博客">
+      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ydxの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/WSL2%E8%BF%90%E8%A1%8CApollo9.0/" class="post-title-link" itemprop="url">WSL2运行Apollo9.0</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-04-12 16:59:11 / 修改时间：19:57:45" itemprop="dateCreated datePublished" datetime="2024-04-12T16:59:11+08:00">2024-04-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>328</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://apollo.baidu.com/docs/apollo/9.0/md_docs_2_xE5_xAE_x89_xE8_xA3_x85_xE6_x8C_x87_xE5_x8D_x97_2_xE6_xBA_x90_xE7_xA0_x81_xE5_xAE_x89_c6622abe953930b2197ae66df0a51dcd.html">Apollo官方文档-源码安装说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://apollo.baidu.com/community/article/1212">Apollo官方社区文章-40系列显卡新镜像支持</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ApolloAuto/apollo/issues/14821">Apollo Github Issue-14821 使用4090显卡编译报错</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ApolloAuto/apollo/issues/14478">Apollo Github Issue-14478 Fail to build apollo in WSL2 ( error code: 14, error message: ‘Socket closed’)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/nvidia-container-toolkit/issues/289">Apollo Github Issue-289 WSL2: nvidia-container-cli mount error, libnvidia-ml.so.1: file exists: unknown</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ApolloAuto/apollo/issues/15246">Apollo Github Issue-15246 dev_start进不去
+</a></li>
+</ol>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>首先根据官方文档安装好依赖，然后下载<code>Apollo v9.0.0</code>源码，解压后进入<code>apollo</code>目录。</p>
+<h3 id="1-修改dev-start-sh脚本"><a href="#1-修改dev-start-sh脚本" class="headerlink" title="1. 修改dev_start.sh脚本"></a>1. 修改<code>dev_start.sh</code>脚本</h3><p>Apollo默认镜像对于40系列显卡不支持，根据参考资料2，需要修改<code>docker/scripts/dev_start.sh</code>中的<code>VERSION_X86_64</code>镜像版本:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VERSION_X86_64=&quot;dev-x86_64-18.04-20231128_2222&quot;</span><br></pre></td></tr></table></figure>
+<p>按照参考资料2中的步骤说明，下一步直接执行<code>./docker/scripts/dev_start.sh</code>进行镜像构建即可，但在<code>WSL2</code>下构建会出现以下问题：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-container-cli mount error, libnvidia-ml.so.1: file exists: unknown.</span><br></pre></td></tr></table></figure>
+<p>实际上镜像已经成功生成，只是在执行容器时出现错误，根据参考资料5和参考资料6，首先将<code>dev_start.sh</code>中的容器执行命令注释掉。</p>
+<p>然后按照以下步骤进行操作：</p>
+<p>```bash</p>
+<h1 id="查看docker-镜像id"><a href="#查看docker-镜像id" class="headerlink" title="查看docker 镜像id"></a>查看docker 镜像id</h1><p>docker images</p>
+<h1 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h1><p>sudo docker run -it —rm <Apollo的镜像ID></p>
+<h1 id="删除镜像内NVIDIA相关文件"><a href="#删除镜像内NVIDIA相关文件" class="headerlink" title="删除镜像内NVIDIA相关文件"></a>删除镜像内NVIDIA相关文件</h1><p>rm /usr/lib/x86_64-linux-gnu/libnvidia-<em><br>rm /usr/lib/x86_64-linux-gnu/libcuda.so</em><br>rm /usr/lib/x86_64-linux-gnu/libnvcuvid.so.*</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -235,7 +347,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -387,7 +499,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -532,7 +644,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -664,7 +776,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -772,7 +884,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -872,7 +984,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -981,7 +1093,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1085,7 +1197,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1189,7 +1301,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
+      <time title="修改时间：2024-04-12 19:57:45" itemprop="dateModified" datetime="2024-04-12T19:57:45+08:00">2024-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1252,112 +1364,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://slam-learner.github.io/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar2.gif">
-      <meta itemprop="name" content="ydx">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ydxの博客">
-      <meta itemprop="description" content="江苏大学 | 车辆工程 | SLAM">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ydxの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">PicGo图床设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-02-08 17:52:47" itemprop="dateCreated datePublished" datetime="2024-02-08T17:52:47+08:00">2024-02-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-11 17:41:21" itemprop="dateModified" datetime="2024-04-11T17:41:21+08:00">2024-04-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>444</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="图床的介绍"><a href="#图床的介绍" class="headerlink" title="图床的介绍"></a>图床的介绍</h2><p>图床在台湾叫做 <code>網路相簿</code>，实际上就是可以将图片存放在网络上。好处在于比如在 markdown 中插入图片，假如使用本地图片的方式，那么当博客的位置发生变更时图片将会失效。尽管可以通过相对路径的方式部分程度的进行解决，但是假如想要将 markdown 文件分享给别人，如果想要他获得相同的显示效果就必须把图片连同 markdown 文件一起分享出去。而使用图床就可以做到 markdown 的显示效果在各个地方都是相同的，并且减少空间占用。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/08/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PicGo%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1387,7 +1393,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">30 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
