@@ -34,7 +34,7 @@ endif( CMAKE_BUILD_TYPE MATCHES DEBUG )
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
-set(CMAKE_EXPORT_COMPILECOMMANDS ON) 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) 
 
 # Check C++11 or C++0x support
 include(CheckCXXCompilerFlag)
